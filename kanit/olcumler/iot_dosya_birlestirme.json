@@ -1,0 +1,53 @@
+{
+  "baslangic_utc": "2026-11-16T19:57:40.281762+00:00",
+  "spark_surumu": "3.5.3",
+  "kodek": "zstd",
+  "hedef_dosya_sayisi": 2,
+  "yazma_suresi_s": 6.155266080997535,
+  "kayitlar_ve_tekrar_adetleri_esit": true,
+  "ozet": [
+    {
+      "durum": "once",
+      "yol": "s3a://islenmis/iot_bicim_deneyi/zstd/",
+      "kayit_sayisi": 3000000,
+      "dosya_sayisi": 8,
+      "toplam_bayt": 34631624,
+      "ortalama_dosya_bayti": 4328953.0,
+      "en_kucuk_dosya_bayti": 4320226,
+      "en_buyuk_dosya_bayti": 4331948,
+      "sorgu_saniyeleri": [
+        0.5107789679968846,
+        0.5527041530003771,
+        0.4659969439962879
+      ],
+      "ortalama_sorgu_s": 0.5098266883311832
+    },
+    {
+      "durum": "sonra",
+      "yol": "s3a://islenmis/iot_dosya_birlestirme/iki_dosya_zstd/",
+      "kayit_sayisi": 3000000,
+      "dosya_sayisi": 2,
+      "toplam_bayt": 37830244,
+      "ortalama_dosya_bayti": 18915122.0,
+      "en_kucuk_dosya_bayti": 18910955,
+      "en_buyuk_dosya_bayti": 18919289,
+      "sorgu_saniyeleri": [
+        0.7544706699991366,
+        0.7012727539986372,
+        0.4786953149960027
+      ],
+      "ortalama_sorgu_s": 0.6448129129979255
+    }
+  ],
+  "notlar": [
+    "Kaynak ve ham veri degismedi; yalniz ayri deney hedefi yeniden yazildi.",
+    "Temizleme veya tekillestirme yok; tum alti alan ve null degerler korundu.",
+    "Esit satir sayisi ve EXCEPT ALL ile satir icerigi/tekrar adetleri dogrulandi.",
+    "Her durumda bir isinma ve uc zamanli ayni sorgu; surelere dogrulama dahil degil.",
+    "Spark sorgu onbellegi kullanilmadi; OS/S3 onbellekleri temizlenmedi.",
+    "Dosya boyutu yalniz Parquet dosyalarini kapsar.",
+    "Iki dosya yerel deney tercihidir; uretim icin hedef dosya boyutu olcege gore belirlenir.",
+    "Dosya sayisinin azalmasi sorgunun mutlaka hizlanacagi anlamina gelmez.",
+    "Bu hedef tarih klasorlerine ayrilmamis ayri bir birlestirme deneyidir."
+  ]
+}
