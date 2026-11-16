@@ -1,0 +1,16 @@
+﻿olcum,bicim,tekrar,deger,birim
+yazma,Parquet-snappy,1,7.30571359699934,s
+yazma,Parquet-zstd,1,4.620949150999877,s
+yazma,Parquet-gzip,1,3.845041480999498,s
+sorgu,JSON,1,2.1016225370003667,s
+sorgu,Parquet-snappy,1,0.3674057929983974,s
+sorgu,Parquet-zstd,1,0.352788807998877,s
+sorgu,Parquet-gzip,1,0.39483310300056473,s
+sorgu,Parquet-snappy,2,0.3625486649998493,s
+sorgu,Parquet-zstd,2,0.34687708800083783,s
+sorgu,Parquet-gzip,2,0.3525091829997109,s
+sorgu,JSON,2,2.027699920001396,s
+sorgu,Parquet-zstd,3,0.40211024199925305,s
+sorgu,Parquet-gzip,3,0.44904376700105786,s
+sorgu,JSON,3,2.1849620830016647,s
+sorgu,Parquet-snappy,3,0.40658584700031497,s

@@ -1,0 +1,27 @@
+== Parsed Logical Plan ==
+'Aggregate ['bolge], ['bolge, count(1) AS adet#727L, avg('sicaklik) AS ortalama_sicaklik#729, avg('nem) AS ortalama_nem#731]
++- Filter isnotnull(sicaklik#690)
+   +- Project [olay_zamani#687, sensor_id#688, bolge#689, sicaklik#690, nem#691, titresim#692]
+      +- Relation [olay_zamani#687,sensor_id#688,bolge#689,sicaklik#690,nem#691,titresim#692,tarih#693] json
+
+== Analyzed Logical Plan ==
+bolge: string, adet: bigint, ortalama_sicaklik: double, ortalama_nem: double
+Aggregate [bolge#689], [bolge#689, count(1) AS adet#727L, avg(sicaklik#690) AS ortalama_sicaklik#729, avg(nem#691) AS ortalama_nem#731]
++- Filter isnotnull(sicaklik#690)
+   +- Project [olay_zamani#687, sensor_id#688, bolge#689, sicaklik#690, nem#691, titresim#692]
+      +- Relation [olay_zamani#687,sensor_id#688,bolge#689,sicaklik#690,nem#691,titresim#692,tarih#693] json
+
+== Optimized Logical Plan ==
+Aggregate [bolge#689], [bolge#689, count(1) AS adet#727L, avg(sicaklik#690) AS ortalama_sicaklik#729, avg(nem#691) AS ortalama_nem#731]
++- Project [bolge#689, sicaklik#690, nem#691]
+   +- Filter isnotnull(sicaklik#690)
+      +- Relation [olay_zamani#687,sensor_id#688,bolge#689,sicaklik#690,nem#691,titresim#692,tarih#693] json
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- HashAggregate(keys=[bolge#689], functions=[count(1), avg(sicaklik#690), avg(nem#691)], output=[bolge#689, adet#727L, ortalama_sicaklik#729, ortalama_nem#731])
+   +- Exchange hashpartitioning(bolge#689, 8), ENSURE_REQUIREMENTS, [plan_id=241]
+      +- HashAggregate(keys=[bolge#689], functions=[partial_count(1), partial_avg(sicaklik#690), partial_avg(nem#691)], output=[bolge#689, count#741L, sum#742, count#743L, sum#744, count#745L])
+         +- Project [bolge#689, sicaklik#690, nem#691]
+            +- Filter isnotnull(sicaklik#690)
+               +- FileScan json [bolge#689,sicaklik#690,nem#691,tarih#693] Batched: false, DataFilters: [isnotnull(sicaklik#690)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://ham/iot], PartitionFilters: [], PushedFilters: [IsNotNull(sicaklik)], ReadSchema: struct<bolge:string,sicaklik:double,nem:double>

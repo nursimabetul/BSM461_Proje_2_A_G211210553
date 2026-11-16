@@ -1,0 +1,80 @@
+{
+  "baslangic_utc": "2026-11-14T23:24:33.914191+00:00",
+  "spark_surumu": "3.5.3",
+  "varsayilan_paralellik": 8,
+  "shuffle_bolum_sayisi": 8,
+  "yazma_bolum_sayisi": 8,
+  "ozet": [
+    {
+      "bicim": "JSON",
+      "kayit": 3000000,
+      "dosya": 14,
+      "bayt": 430702406,
+      "ortalama_dosya_bayti": 30764457.57142857,
+      "yol": "s3a://ham/iot/",
+      "sorgu_saniyeleri": [
+        2.1016225370003667,
+        2.027699920001396,
+        2.1849620830016647
+      ],
+      "ortalama_sorgu_s": 2.1047615133344757,
+      "ham_boyuta_oran": 1.0
+    },
+    {
+      "bicim": "Parquet-snappy",
+      "kayit": 3000000,
+      "dosya": 8,
+      "bayt": 46307832,
+      "ortalama_dosya_bayti": 5788479.0,
+      "yol": "s3a://islenmis/iot_bicim_deneyi/snappy/",
+      "sorgu_saniyeleri": [
+        0.3674057929983974,
+        0.3625486649998493,
+        0.40658584700031497
+      ],
+      "ortalama_sorgu_s": 0.37884676833285386,
+      "ham_boyuta_oran": 0.10751700328323682
+    },
+    {
+      "bicim": "Parquet-zstd",
+      "kayit": 3000000,
+      "dosya": 8,
+      "bayt": 34631624,
+      "ortalama_dosya_bayti": 4328953.0,
+      "yol": "s3a://islenmis/iot_bicim_deneyi/zstd/",
+      "sorgu_saniyeleri": [
+        0.352788807998877,
+        0.34687708800083783,
+        0.40211024199925305
+      ],
+      "ortalama_sorgu_s": 0.36725871266632265,
+      "ham_boyuta_oran": 0.0804073149291857
+    },
+    {
+      "bicim": "Parquet-gzip",
+      "kayit": 3000000,
+      "dosya": 8,
+      "bayt": 33812981,
+      "ortalama_dosya_bayti": 4226622.625,
+      "yol": "s3a://islenmis/iot_bicim_deneyi/gzip/",
+      "sorgu_saniyeleri": [
+        0.39483310300056473,
+        0.3525091829997109,
+        0.44904376700105786
+      ],
+      "ortalama_sorgu_s": 0.3987953510004445,
+      "ham_boyuta_oran": 0.07850659882313264
+    }
+  ],
+  "notlar": [
+    "Temizleme veya tekillestirme uygulanmadi; tum bicimler ayni ham kayitlari icerir.",
+    "Olay zamani metin olarak korundu; bicim karsilastirmasinda tipler ayni tutuldu.",
+    "Boyut yalniz veri dosyalarini kapsar; _SUCCESS gibi yardimci nesneler dahil degil.",
+    "Her bicimde bir isinma ve uc zamanli sorgu var. Spark sorgu onbellegi kullanilmadi.",
+    "Isletim sistemi ve S3 onbellekleri temizlenmedi; sonuclar soguk disk testi degildir.",
+    "Sorgu: sicaklik bos olmayanlari bolgeye gore say, ortalama sicaklik ve nem hesapla.",
+    "Sorgu sonuclari ve satir sayilari her bicimde dogrulandi.",
+    "Yazma suresi her kodekte tek kosudur; kesin performans karari icin tek basina yeterli degildir.",
+    "Makine RAM/CPU ve Docker kaynak ayarlari ayrica rapora yazilmalidir."
+  ]
+}

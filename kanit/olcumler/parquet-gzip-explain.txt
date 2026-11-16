@@ -1,0 +1,26 @@
+== Parsed Logical Plan ==
+'Aggregate ['bolge], ['bolge, count(1) AS adet#1001L, avg('sicaklik) AS ortalama_sicaklik#1003, avg('nem) AS ortalama_nem#1005]
++- Filter isnotnull(sicaklik#967)
+   +- Project [olay_zamani#964, sensor_id#965, bolge#966, sicaklik#967, nem#968, titresim#969]
+      +- Relation [olay_zamani#964,sensor_id#965,bolge#966,sicaklik#967,nem#968,titresim#969] parquet
+
+== Analyzed Logical Plan ==
+bolge: string, adet: bigint, ortalama_sicaklik: double, ortalama_nem: double
+Aggregate [bolge#966], [bolge#966, count(1) AS adet#1001L, avg(sicaklik#967) AS ortalama_sicaklik#1003, avg(nem#968) AS ortalama_nem#1005]
++- Filter isnotnull(sicaklik#967)
+   +- Project [olay_zamani#964, sensor_id#965, bolge#966, sicaklik#967, nem#968, titresim#969]
+      +- Relation [olay_zamani#964,sensor_id#965,bolge#966,sicaklik#967,nem#968,titresim#969] parquet
+
+== Optimized Logical Plan ==
+Aggregate [bolge#966], [bolge#966, count(1) AS adet#1001L, avg(sicaklik#967) AS ortalama_sicaklik#1003, avg(nem#968) AS ortalama_nem#1005]
++- Project [bolge#966, sicaklik#967, nem#968]
+   +- Filter isnotnull(sicaklik#967)
+      +- Relation [olay_zamani#964,sensor_id#965,bolge#966,sicaklik#967,nem#968,titresim#969] parquet
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- HashAggregate(keys=[bolge#966], functions=[count(1), avg(sicaklik#967), avg(nem#968)], output=[bolge#966, adet#1001L, ortalama_sicaklik#1003, ortalama_nem#1005])
+   +- Exchange hashpartitioning(bolge#966, 8), ENSURE_REQUIREMENTS, [plan_id=559]
+      +- HashAggregate(keys=[bolge#966], functions=[partial_count(1), partial_avg(sicaklik#967), partial_avg(nem#968)], output=[bolge#966, count#1015L, sum#1016, count#1017L, sum#1018, count#1019L])
+         +- Filter isnotnull(sicaklik#967)
+            +- FileScan parquet [bolge#966,sicaklik#967,nem#968] Batched: true, DataFilters: [isnotnull(sicaklik#967)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[s3a://islenmis/iot_bicim_deneyi/gzip], PartitionFilters: [], PushedFilters: [IsNotNull(sicaklik)], ReadSchema: struct<bolge:string,sicaklik:double,nem:double>

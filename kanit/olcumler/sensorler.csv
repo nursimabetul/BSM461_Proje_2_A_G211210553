@@ -1,0 +1,201 @@
+sensor_id,bolge,model,kurulum_yili
+sensor-001,Ege,SN-12,2018
+sensor-002,Akdeniz,KM-5,2022
+sensor-003,İç Anadolu,SN-10,2021
+sensor-004,Karadeniz,TX-200,2024
+sensor-005,Doğu Anadolu,SN-12,2019
+sensor-006,Güneydoğu,TX-200,2025
+sensor-007,Marmara,KM-5,2025
+sensor-008,Ege,SN-12,2019
+sensor-009,Akdeniz,KM-5,2019
+sensor-010,İç Anadolu,SN-10,2019
+sensor-011,Karadeniz,SN-10,2019
+sensor-012,Doğu Anadolu,SN-10,2023
+sensor-013,Güneydoğu,TX-100,2021
+sensor-014,Marmara,SN-10,2025
+sensor-015,Ege,TX-100,2024
+sensor-016,Akdeniz,KM-5,2024
+sensor-017,İç Anadolu,TX-100,2025
+sensor-018,Karadeniz,TX-200,2021
+sensor-019,Doğu Anadolu,SN-10,2018
+sensor-020,Güneydoğu,KM-5,2023
+sensor-021,Marmara,TX-100,2018
+sensor-022,Ege,SN-12,2024
+sensor-023,Akdeniz,TX-100,2018
+sensor-024,İç Anadolu,TX-100,2025
+sensor-025,Karadeniz,TX-100,2018
+sensor-026,Doğu Anadolu,SN-12,2018
+sensor-027,Güneydoğu,TX-100,2022
+sensor-028,Marmara,KM-5,2025
+sensor-029,Ege,TX-100,2023
+sensor-030,Akdeniz,KM-5,2022
+sensor-031,İç Anadolu,TX-200,2019
+sensor-032,Karadeniz,KM-5,2021
+sensor-033,Doğu Anadolu,TX-100,2024
+sensor-034,Güneydoğu,KM-5,2025
+sensor-035,Marmara,KM-5,2025
+sensor-036,Ege,SN-12,2019
+sensor-037,Akdeniz,KM-5,2025
+sensor-038,İç Anadolu,SN-10,2021
+sensor-039,Karadeniz,KM-5,2022
+sensor-040,Doğu Anadolu,KM-5,2020
+sensor-041,Güneydoğu,KM-5,2020
+sensor-042,Marmara,SN-10,2025
+sensor-043,Ege,TX-100,2024
+sensor-044,Akdeniz,KM-5,2023
+sensor-045,İç Anadolu,SN-12,2018
+sensor-046,Karadeniz,SN-12,2021
+sensor-047,Doğu Anadolu,SN-10,2020
+sensor-048,Güneydoğu,KM-5,2020
+sensor-049,Marmara,SN-12,2020
+sensor-050,Ege,SN-10,2021
+sensor-051,Akdeniz,KM-5,2019
+sensor-052,İç Anadolu,TX-200,2024
+sensor-053,Karadeniz,TX-100,2020
+sensor-054,Doğu Anadolu,KM-5,2022
+sensor-055,Güneydoğu,SN-12,2025
+sensor-056,Marmara,SN-10,2022
+sensor-057,Ege,TX-100,2025
+sensor-058,Akdeniz,TX-100,2022
+sensor-059,İç Anadolu,KM-5,2020
+sensor-060,Karadeniz,TX-100,2025
+sensor-061,Doğu Anadolu,TX-200,2019
+sensor-062,Güneydoğu,SN-10,2023
+sensor-063,Marmara,SN-10,2022
+sensor-064,Ege,SN-12,2019
+sensor-065,Akdeniz,SN-12,2022
+sensor-066,İç Anadolu,SN-12,2022
+sensor-067,Karadeniz,TX-100,2020
+sensor-068,Doğu Anadolu,SN-12,2019
+sensor-069,Güneydoğu,KM-5,2024
+sensor-070,Marmara,SN-10,2024
+sensor-071,Ege,TX-100,2024
+sensor-072,Akdeniz,TX-100,2024
+sensor-073,İç Anadolu,TX-200,2025
+sensor-074,Karadeniz,KM-5,2018
+sensor-075,Doğu Anadolu,TX-100,2023
+sensor-076,Güneydoğu,SN-12,2023
+sensor-077,Marmara,KM-5,2022
+sensor-078,Ege,KM-5,2018
+sensor-079,Akdeniz,KM-5,2023
+sensor-080,İç Anadolu,KM-5,2019
+sensor-081,Karadeniz,SN-10,2021
+sensor-082,Doğu Anadolu,KM-5,2020
+sensor-083,Güneydoğu,TX-100,2025
+sensor-084,Marmara,SN-10,2023
+sensor-085,Ege,KM-5,2024
+sensor-086,Akdeniz,SN-10,2021
+sensor-087,İç Anadolu,KM-5,2022
+sensor-088,Karadeniz,SN-10,2021
+sensor-089,Doğu Anadolu,TX-100,2022
+sensor-090,Güneydoğu,TX-100,2023
+sensor-091,Marmara,KM-5,2024
+sensor-092,Ege,KM-5,2025
+sensor-093,Akdeniz,KM-5,2018
+sensor-094,İç Anadolu,TX-100,2019
+sensor-095,Karadeniz,TX-100,2020
+sensor-096,Doğu Anadolu,TX-200,2023
+sensor-097,Güneydoğu,SN-12,2023
+sensor-098,Marmara,SN-12,2021
+sensor-099,Ege,TX-100,2019
+sensor-100,Akdeniz,KM-5,2021
+sensor-101,İç Anadolu,SN-12,2022
+sensor-102,Karadeniz,SN-12,2021
+sensor-103,Doğu Anadolu,TX-100,2020
+sensor-104,Güneydoğu,KM-5,2023
+sensor-105,Marmara,TX-100,2025
+sensor-106,Ege,KM-5,2022
+sensor-107,Akdeniz,KM-5,2024
+sensor-108,İç Anadolu,TX-200,2020
+sensor-109,Karadeniz,SN-12,2025
+sensor-110,Doğu Anadolu,KM-5,2024
+sensor-111,Güneydoğu,SN-10,2018
+sensor-112,Marmara,SN-12,2019
+sensor-113,Ege,TX-100,2021
+sensor-114,Akdeniz,TX-100,2022
+sensor-115,İç Anadolu,SN-10,2024
+sensor-116,Karadeniz,KM-5,2023
+sensor-117,Doğu Anadolu,SN-10,2018
+sensor-118,Güneydoğu,TX-200,2023
+sensor-119,Marmara,KM-5,2020
+sensor-120,Ege,TX-200,2018
+sensor-121,Akdeniz,SN-10,2020
+sensor-122,İç Anadolu,TX-200,2018
+sensor-123,Karadeniz,KM-5,2020
+sensor-124,Doğu Anadolu,SN-12,2024
+sensor-125,Güneydoğu,KM-5,2019
+sensor-126,Marmara,TX-100,2021
+sensor-127,Ege,KM-5,2025
+sensor-128,Akdeniz,KM-5,2021
+sensor-129,İç Anadolu,SN-10,2021
+sensor-130,Karadeniz,KM-5,2020
+sensor-131,Doğu Anadolu,TX-100,2023
+sensor-132,Güneydoğu,SN-10,2021
+sensor-133,Marmara,KM-5,2019
+sensor-134,Ege,TX-200,2020
+sensor-135,Akdeniz,TX-100,2022
+sensor-136,İç Anadolu,KM-5,2023
+sensor-137,Karadeniz,KM-5,2018
+sensor-138,Doğu Anadolu,KM-5,2024
+sensor-139,Güneydoğu,SN-10,2025
+sensor-140,Marmara,TX-100,2023
+sensor-141,Ege,SN-10,2023
+sensor-142,Akdeniz,TX-100,2021
+sensor-143,İç Anadolu,KM-5,2024
+sensor-144,Karadeniz,SN-12,2025
+sensor-145,Doğu Anadolu,KM-5,2025
+sensor-146,Güneydoğu,TX-100,2023
+sensor-147,Marmara,KM-5,2018
+sensor-148,Ege,SN-10,2020
+sensor-149,Akdeniz,SN-10,2023
+sensor-150,İç Anadolu,KM-5,2020
+sensor-151,Karadeniz,KM-5,2024
+sensor-152,Doğu Anadolu,KM-5,2021
+sensor-153,Güneydoğu,KM-5,2019
+sensor-154,Marmara,TX-100,2018
+sensor-155,Ege,TX-100,2021
+sensor-156,Akdeniz,SN-12,2019
+sensor-157,İç Anadolu,KM-5,2021
+sensor-158,Karadeniz,SN-12,2024
+sensor-159,Doğu Anadolu,SN-10,2021
+sensor-160,Güneydoğu,TX-100,2022
+sensor-161,Marmara,TX-100,2019
+sensor-162,Ege,KM-5,2023
+sensor-163,Akdeniz,SN-12,2024
+sensor-164,İç Anadolu,TX-200,2018
+sensor-165,Karadeniz,TX-200,2018
+sensor-166,Doğu Anadolu,TX-200,2023
+sensor-167,Güneydoğu,TX-200,2019
+sensor-168,Marmara,TX-200,2018
+sensor-169,Ege,TX-200,2023
+sensor-170,Akdeniz,TX-200,2022
+sensor-171,İç Anadolu,TX-200,2018
+sensor-172,Karadeniz,TX-200,2021
+sensor-173,Doğu Anadolu,TX-200,2025
+sensor-174,Güneydoğu,KM-5,2019
+sensor-175,Marmara,SN-10,2019
+sensor-176,Ege,SN-12,2021
+sensor-177,Akdeniz,SN-12,2024
+sensor-178,İç Anadolu,SN-12,2018
+sensor-179,Karadeniz,KM-5,2020
+sensor-180,Doğu Anadolu,SN-12,2022
+sensor-181,Güneydoğu,SN-10,2022
+sensor-182,Marmara,TX-200,2024
+sensor-183,Ege,SN-12,2020
+sensor-184,Akdeniz,SN-10,2023
+sensor-185,İç Anadolu,TX-100,2019
+sensor-186,Karadeniz,SN-10,2018
+sensor-187,Doğu Anadolu,SN-12,2020
+sensor-188,Güneydoğu,SN-12,2021
+sensor-189,Marmara,SN-10,2025
+sensor-190,Ege,KM-5,2018
+sensor-191,Akdeniz,TX-100,2021
+sensor-192,İç Anadolu,TX-100,2023
+sensor-193,Karadeniz,SN-10,2023
+sensor-194,Doğu Anadolu,SN-12,2022
+sensor-195,Güneydoğu,KM-5,2021
+sensor-196,Marmara,KM-5,2023
+sensor-197,Ege,SN-10,2025
+sensor-198,Akdeniz,SN-12,2018
+sensor-199,İç Anadolu,TX-100,2021
+sensor-200,Karadeniz,TX-100,2024

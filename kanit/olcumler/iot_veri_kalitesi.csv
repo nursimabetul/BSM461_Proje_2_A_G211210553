@@ -1,0 +1,17 @@
+﻿olcum,deger
+toplam_dolu_satir,3000000
+bos_satir,0
+gecerli_json_nesnesi,3000000
+gecersiz_json_veya_nesne,0
+tekrar_fazla_kopya,6073
+eksik_alanli_kayit,2983
+null_degerli_kayit,2947
+bos_metinli_kayit,0
+en_az_bir_eksik_null_bos_iceren,5930
+sayisal_tipi_uyusmayan_kayit,0
+zaman_bicimi_gecersiz_kayit,0
+dosya_sayisi,14
+toplam_dosya_bayti,430702406
+farkli_sensor_sayisi,200
+farkli_bolge_sayisi,7
+benzersiz_json_kaydi,2993927

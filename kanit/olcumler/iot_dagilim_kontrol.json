@@ -1,0 +1,238 @@
+{
+  "zaman_utc": "2026-11-14T23:30:32.633081+00:00",
+  "kaynak": "s3a://islenmis/iot_bicim_deneyi/zstd/",
+  "spark_surumu": "3.5.3",
+  "adaylar": [
+    {
+      "anahtar": "sensor_id",
+      "sutunlar": [
+        "sensor_id"
+      ],
+      "toplam_kayit": 3000000,
+      "anahtarinda_null_olan_kayit": 1175,
+      "farkli_anahtar_grubu": 201,
+      "en_buyuk_anahtar": {
+        "sensor_id": "sensor-091",
+        "count": 15724
+      },
+      "en_buyuk_anahtar_payi_yuzde": 0.5241333333333333,
+      "ilk_10_anahtar": [
+        {
+          "sensor_id": "sensor-091",
+          "count": 15724
+        },
+        {
+          "sensor_id": "sensor-094",
+          "count": 15635
+        },
+        {
+          "sensor_id": "sensor-066",
+          "count": 15627
+        },
+        {
+          "sensor_id": "sensor-027",
+          "count": 15620
+        },
+        {
+          "sensor_id": "sensor-152",
+          "count": 15595
+        },
+        {
+          "sensor_id": "sensor-038",
+          "count": 15594
+        },
+        {
+          "sensor_id": "sensor-078",
+          "count": 15579
+        },
+        {
+          "sensor_id": "sensor-168",
+          "count": 15575
+        },
+        {
+          "sensor_id": "sensor-081",
+          "count": 15573
+        },
+        {
+          "sensor_id": "sensor-195",
+          "count": 15562
+        }
+      ],
+      "bolum_sayilari": [
+        319328,
+        378139,
+        502486,
+        238593,
+        301737,
+        414743,
+        386601,
+        458373
+      ],
+      "ortalama_bolum": 375000.0,
+      "en_dolu_bolum": 502486,
+      "en_dolu_bolum_bolu_ortalama": 1.3399626666666666,
+      "bos_bolum_sayisi": 0
+    },
+    {
+      "anahtar": "bolge",
+      "sutunlar": [
+        "bolge"
+      ],
+      "toplam_kayit": 3000000,
+      "anahtarinda_null_olan_kayit": 1196,
+      "farkli_anahtar_grubu": 8,
+      "en_buyuk_anahtar": {
+        "bolge": "Ege",
+        "count": 437585
+      },
+      "en_buyuk_anahtar_payi_yuzde": 14.586166666666667,
+      "ilk_10_anahtar": [
+        {
+          "bolge": "Ege",
+          "count": 437585
+        },
+        {
+          "bolge": "Karadeniz",
+          "count": 436360
+        },
+        {
+          "bolge": "Akdeniz",
+          "count": 433528
+        },
+        {
+          "bolge": "İç Anadolu",
+          "count": 433062
+        },
+        {
+          "bolge": "Marmara",
+          "count": 423137
+        },
+        {
+          "bolge": "Güneydoğu",
+          "count": 417954
+        },
+        {
+          "bolge": "Doğu Anadolu",
+          "count": 417178
+        },
+        {
+          "bolge": null,
+          "count": 1196
+        }
+      ],
+      "bolum_sayilari": [
+        0,
+        1288601,
+        1196,
+        850706,
+        0,
+        0,
+        423137,
+        436360
+      ],
+      "ortalama_bolum": 375000.0,
+      "en_dolu_bolum": 1288601,
+      "en_dolu_bolum_bolu_ortalama": 3.436269333333333,
+      "bos_bolum_sayisi": 3
+    },
+    {
+      "anahtar": "bolge_ve_sensor_id",
+      "sutunlar": [
+        "bolge",
+        "sensor_id"
+      ],
+      "toplam_kayit": 3000000,
+      "anahtarinda_null_olan_kayit": 2371,
+      "farkli_anahtar_grubu": 407,
+      "en_buyuk_anahtar": {
+        "bolge": "Marmara",
+        "sensor_id": "sensor-091",
+        "count": 15717
+      },
+      "en_buyuk_anahtar_payi_yuzde": 0.5239,
+      "ilk_10_anahtar": [
+        {
+          "bolge": "Marmara",
+          "sensor_id": "sensor-091",
+          "count": 15717
+        },
+        {
+          "bolge": "İç Anadolu",
+          "sensor_id": "sensor-094",
+          "count": 15631
+        },
+        {
+          "bolge": "İç Anadolu",
+          "sensor_id": "sensor-066",
+          "count": 15623
+        },
+        {
+          "bolge": "Güneydoğu",
+          "sensor_id": "sensor-027",
+          "count": 15610
+        },
+        {
+          "bolge": "Doğu Anadolu",
+          "sensor_id": "sensor-152",
+          "count": 15588
+        },
+        {
+          "bolge": "İç Anadolu",
+          "sensor_id": "sensor-038",
+          "count": 15581
+        },
+        {
+          "bolge": "Ege",
+          "sensor_id": "sensor-078",
+          "count": 15575
+        },
+        {
+          "bolge": "Marmara",
+          "sensor_id": "sensor-168",
+          "count": 15570
+        },
+        {
+          "bolge": "Karadeniz",
+          "sensor_id": "sensor-081",
+          "count": 15567
+        },
+        {
+          "bolge": "Güneydoğu",
+          "sensor_id": "sensor-195",
+          "count": 15553
+        }
+      ],
+      "bolum_sayilari": [
+        317419,
+        336631,
+        388809,
+        403009,
+        347309,
+        321281,
+        423359,
+        462183
+      ],
+      "ortalama_bolum": 375000.0,
+      "en_dolu_bolum": 462183,
+      "en_dolu_bolum_bolu_ortalama": 1.232488,
+      "bos_bolum_sayisi": 0
+    }
+  ],
+  "bilesik_anahtar_karsilastirmasi": {
+    "once": "bolge",
+    "sonra": "bolge_ve_sensor_id",
+    "once_oran": 3.436269333333333,
+    "sonra_oran": 1.232488
+  },
+  "notlar": [
+    "Ayni ham kayitlar kullanildi; tekrarlar ve null degerler korunmustur.",
+    "Eksik alanlar Parquet okununca null olarak temsil edilir.",
+    "8 bolum icin Spark hash ve pozitif mod kullanildi. Bos bolumler ortalamaya dahildir.",
+    "Bilesik anahtar deneyi bolge anahtarina sensor_id eklenmesini olcer; iyilesme varsayilmaz.",
+    "En buyuk anahtar payi ile hash bolum dolulugu farkli olculerdir.",
+    "Bu Kafka bolumleyicisinin veya gorev surelerinin olcumu degildir.",
+    "Ham veri, temiz veri, Kafka ve S3 tarih bolumlemesi icin kararlar ayri gerekcelendirilmelidir.",
+    "Daha dengeli dagilim her sorguyu hizlandirmaz; bolgeye gore toplama yine shuffle gerektirebilir.",
+    "Bir sensorun tek anahtarda kalmasi gerektiginde bolge+sensor anahtarinin semantigi ayrica degerlendirilir."
+  ]
+}
