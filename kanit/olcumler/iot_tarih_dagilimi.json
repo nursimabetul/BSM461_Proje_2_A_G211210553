@@ -1,0 +1,90 @@
+{
+  "zaman_utc": "2026-11-16T19:22:51.771406+00:00",
+  "spark_surumu": "3.5.3",
+  "kaynak": "s3a://ham/iot/",
+  "anahtar": "olay_tarihi",
+  "saat_dilimi": "UTC",
+  "toplam_kayit": 3000000,
+  "tarih_sayisi": 14,
+  "null_tarih_kaydi": 0,
+  "tarih_sayimlari": [
+    {
+      "tarih": "2026-10-31",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-01",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-02",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-03",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-04",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-05",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-06",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-07",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-08",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-09",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-10",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-11",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-12",
+      "kayit": 214285
+    },
+    {
+      "tarih": "2026-11-13",
+      "kayit": 214295
+    }
+  ],
+  "en_buyuk_anahtar": "2026-11-13",
+  "en_buyuk_anahtar_payi_yuzde": 7.143166666666667,
+  "bolum_sayilari": [
+    0,
+    428570,
+    428570,
+    214285,
+    857150,
+    642855,
+    214285,
+    214285
+  ],
+  "ortalama_bolum": 375000.0,
+  "en_dolu_bolum_bolu_ortalama": 2.2857333333333334,
+  "bos_bolum_sayisi": 1,
+  "notlar": [
+    "Anahtar olay_zamani alanindan UTC takvim gunu olarak turetildi.",
+    "8 bolum icin pozitif mod(Spark hash(tarih), 8) kullanildi; bos bolumler ortalamaya dahildir.",
+    "Ayni veri kullanildi; tekrarlar ve eksik degerler korunur.",
+    "Bu Kafka bolumleme deneyi veya gorev suresi olcumu degildir.",
+    "Spark hash bolumlemesi ile S3 tarih klasorleri farklidir. Tarihin hash dagilimi zayif ciksa bile tarih araligi sorgulari icin S3 tarih klasorleri faydali olabilir."
+  ]
+}
