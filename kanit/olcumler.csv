@@ -538,3 +538,30 @@ dosya_birlestirme,sonra,yazma_suresi,1,6.155266080997535,saniye,olcumler/iot_dos
 dosya_birlestirme,dogrulama,kayitlar_ve_tekrar_adetleri_esit,1,1,mantiksal_0_1,olcumler/iot_dosya_birlestirme.json,1=esit; esit satir sayisi ve EXCEPT ALL ile dogrulandi. Temizleme yok.
 dosya_birlestirme,sonra_vs_once,boyut_degisimi_yuzde,,9.2361247627313,yuzde,olcumler/iot_dosya_birlestirme.json,Turetilmis: 100*(sonra/once - 1). Pozitif deger artis.
 dosya_birlestirme,sonra_vs_once,sure_degisimi_yuzde,,26.47688474461647,yuzde,olcumler/iot_dosya_birlestirme.json,"Turetilmis: 100*(sonra/once - 1). Pozitif deger artis; uc yerel kosu, genellenemez."
+olcek,akis_ornek_20,mesaj_bayti,1,145,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,2,142,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,3,145,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,4,143,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,5,137,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,6,147,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,7,141,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,8,137,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,9,143,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,10,141,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,11,141,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,12,147,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,13,139,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,14,141,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,15,145,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,16,143,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,17,145,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,18,141,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,19,137,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,mesaj_bayti,20,142,bayt,olcumler/iot_ornek_20.jsonl,Kafka mesaj degeri UTF-8 bayt; satir sonu haric
+olcek,akis_ornek_20,ortalama_mesaj_bayti,20,142.1,bayt/olay,olcumler/iot_ornek_20.jsonl,20 mesajin ortalamasi
+olcek,toplu_ham,ortalama_kayit_bayti,1,143.56746866666666,bayt/olay,olcumler/iot_veri_kalitesi.json,toplam_dosya_bayti / toplam_dolu_satir; satir sonu dahil; Z1 hesabinin girdisi
+kusur,carpik_anahtar,sensor_en_fazla_bolu_ortalama,,1.0486773986478037,oran,olcumler/iot_veri_kalitesi.json,"H3 karar rehberi: > 1,5 ise sicak nokta"
+kusur,carpik_anahtar,en_buyuk_sensor_payi,,0.5243386993239019,yuzde,olcumler/iot_veri_kalitesi.json,esit dagilimda 0.50
+kusur,carpik_anahtar,ortalamanin_yuzde80_altindaki_sensor,,11,sensor,olcumler/iot_veri_kalitesi.json,az olay gonderen sensorler (kayip/susma adayi)
+kusur,gec_olay,60s_den_fazla_geride_mesaj,20,1,mesaj,olcumler/iot_ornek_20.jsonl,okunma sirasinda o ana kadarki en yeni olay_zamani'ndan geride
+kusur,gec_olay,en_yeni_olaydan_geride,9,441.0,saniye,olcumler/iot_ornek_20.jsonl,sensor-193

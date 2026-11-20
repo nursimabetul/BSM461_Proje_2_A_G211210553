@@ -1,0 +1,58 @@
+olcek,metrik,deger,birim,formul,kaynak
+1x,ortalama_hiz,60000,olay/s,kart 60000 × 1,kanit/senaryo.txt
+1x,tepe_hiz,480000,olay/s,ortalama × 8,kanit/senaryo.txt
+1x,gunluk_olay,5184000000,olay/gün,ortalama × 86.400,hesap
+1x,ortalama_giris_json,8.61404812,MB/s,ortalama × bayt/olay,hesap
+1x,tepe_giris_json,68.91238496,MB/s,tepe × bayt/olay,hesap
+1x,gunluk_json,744.253757568,GB/gün,günlük olay × bayt/olay,hesap
+1x,saklanan_json,814.95786453696,TB,günlük × 1095 gün,hesap
+1x,gunluk_Parquet-zstd,59.843446272,GB/gün,günlük JSON × 0.0804,kanit/olcumler/iot_bicim_ozet.csv
+1x,saklanan_Parquet-zstd,65.52857366784,TB,saklanan JSON × 0.0804,kanit/olcumler/iot_bicim_ozet.csv
+1x,gunluk_Parquet-snappy,80.019933696,GB/gün,günlük JSON × 0.1075,kanit/olcumler/iot_bicim_ozet.csv
+1x,saklanan_Parquet-snappy,87.62182739712,TB,saklanan JSON × 0.1075,kanit/olcumler/iot_bicim_ozet.csv
+1x,bir_gun_zstd_okuma_NVMe SSD (PCIe 4.0),0.19947815424,dakika,günlük zstd ÷ 5000 MB/s,H1 §5
+1x,bir_gun_zstd_okuma_SATA SSD,1.813437765818182,dakika,günlük zstd ÷ 550 MB/s,H1 §5
+1x,bir_gun_zstd_okuma_10 Gb/s ağ,0.79791261696,dakika,günlük zstd ÷ 1250 MB/s,H1 §5
+1x,bir_gun_zstd_okuma_1 Gb/s ağ,7.9791261696,dakika,günlük zstd ÷ 125 MB/s,H1 §5
+1x,esik_gunluk_zstd,10–100 GB — diskten akıtarak tek makine (DuckDB/Polars),bant,H1 §7,H1 §7
+1x,esik_gunluk_json,"500 GB – birkaç TB — tek sunucu zorlanır: ölçün, karar verin",bant,H1 §7,H1 §7
+1x,esik_saklanan_zstd,"> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",bant,H1 §7,H1 §7
+10x,ortalama_hiz,600000,olay/s,kart 60000 × 10,kanit/senaryo.txt
+10x,tepe_hiz,4800000,olay/s,ortalama × 8,kanit/senaryo.txt
+10x,gunluk_olay,51840000000,olay/gün,ortalama × 86.400,hesap
+10x,ortalama_giris_json,86.14048119999998,MB/s,ortalama × bayt/olay,hesap
+10x,tepe_giris_json,689.1238495999999,MB/s,tepe × bayt/olay,hesap
+10x,gunluk_json,7442.5375756799995,GB/gün,günlük olay × bayt/olay,hesap
+10x,saklanan_json,8149.578645369599,TB,günlük × 1095 gün,hesap
+10x,gunluk_Parquet-zstd,598.4344627199998,GB/gün,günlük JSON × 0.0804,kanit/olcumler/iot_bicim_ozet.csv
+10x,saklanan_Parquet-zstd,655.2857366783999,TB,saklanan JSON × 0.0804,kanit/olcumler/iot_bicim_ozet.csv
+10x,gunluk_Parquet-snappy,800.1993369599999,GB/gün,günlük JSON × 0.1075,kanit/olcumler/iot_bicim_ozet.csv
+10x,saklanan_Parquet-snappy,876.2182739711999,TB,saklanan JSON × 0.1075,kanit/olcumler/iot_bicim_ozet.csv
+10x,bir_gun_zstd_okuma_NVMe SSD (PCIe 4.0),1.9947815423999995,dakika,günlük zstd ÷ 5000 MB/s,H1 §5
+10x,bir_gun_zstd_okuma_SATA SSD,18.134377658181812,dakika,günlük zstd ÷ 550 MB/s,H1 §5
+10x,bir_gun_zstd_okuma_10 Gb/s ağ,7.979126169599998,dakika,günlük zstd ÷ 1250 MB/s,H1 §5
+10x,bir_gun_zstd_okuma_1 Gb/s ağ,79.79126169599998,dakika,günlük zstd ÷ 125 MB/s,H1 §5
+10x,esik_gunluk_zstd,"500 GB – birkaç TB — tek sunucu zorlanır: ölçün, karar verin",bant,H1 §7,H1 §7
+10x,esik_gunluk_json,"> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",bant,H1 §7,H1 §7
+10x,esik_saklanan_zstd,"> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",bant,H1 §7,H1 §7
+100x,ortalama_hiz,6000000,olay/s,kart 60000 × 100,kanit/senaryo.txt
+100x,tepe_hiz,48000000,olay/s,ortalama × 8,kanit/senaryo.txt
+100x,gunluk_olay,518400000000,olay/gün,ortalama × 86.400,hesap
+100x,ortalama_giris_json,861.4048119999999,MB/s,ortalama × bayt/olay,hesap
+100x,tepe_giris_json,6891.238495999999,MB/s,tepe × bayt/olay,hesap
+100x,gunluk_json,74425.3757568,GB/gün,günlük olay × bayt/olay,hesap
+100x,saklanan_json,81495.786453696,TB,günlük × 1095 gün,hesap
+100x,gunluk_Parquet-zstd,5984.3446272,GB/gün,günlük JSON × 0.0804,kanit/olcumler/iot_bicim_ozet.csv
+100x,saklanan_Parquet-zstd,6552.857366784,TB,saklanan JSON × 0.0804,kanit/olcumler/iot_bicim_ozet.csv
+100x,gunluk_Parquet-snappy,8001.9933696,GB/gün,günlük JSON × 0.1075,kanit/olcumler/iot_bicim_ozet.csv
+100x,saklanan_Parquet-snappy,8762.182739712,TB,saklanan JSON × 0.1075,kanit/olcumler/iot_bicim_ozet.csv
+100x,bir_gun_zstd_okuma_NVMe SSD (PCIe 4.0),19.947815423999998,dakika,günlük zstd ÷ 5000 MB/s,H1 §5
+100x,bir_gun_zstd_okuma_SATA SSD,181.34377658181816,dakika,günlük zstd ÷ 550 MB/s,H1 §5
+100x,bir_gun_zstd_okuma_10 Gb/s ağ,79.79126169599999,dakika,günlük zstd ÷ 1250 MB/s,H1 §5
+100x,bir_gun_zstd_okuma_1 Gb/s ağ,797.91261696,dakika,günlük zstd ÷ 125 MB/s,H1 §5
+100x,esik_gunluk_zstd,"> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",bant,H1 §7,H1 §7
+100x,esik_gunluk_json,"> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",bant,H1 §7,H1 §7
+100x,esik_saklanan_zstd,"> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",bant,H1 §7,H1 §7
+kit,toplu_json,0.430702406,GB,ölçülen dosya baytı,kanit/olcumler/iot_veri_kalitesi.json
+kit,esik_toplu_json,< 1 GB — belleğe rahat sığar (pandas),bant,H1 §7,H1 §7
+kit,kit_kac_saniyelik_gercek_veri,50.0,s,3000000 ÷ 60000,hesap

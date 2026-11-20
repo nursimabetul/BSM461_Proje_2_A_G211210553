@@ -1,0 +1,85 @@
+{
+ "carpik_anahtar": {
+  "sensor_basina_olay_en_fazla": 15724,
+  "en_fazla_sensor": "sensor-091",
+  "sensor_basina_olay_ortalama": 14994.125,
+  "en_fazla_bolu_ortalama": 1.0486773986478037,
+  "en_buyuk_sensor_payi_yuzde": 0.5243386993239019,
+  "esit_dagilimda_pay_yuzde": 0.5,
+  "en_buyuk_bolge_payi_yuzde": 14.59198400428971,
+  "esit_dagilimda_bolge_payi_yuzde": 14.285714285714286,
+  "ortalamanin_yuzde_80_altindaki_sensor": [
+   "sensor-017",
+   "sensor-034",
+   "sensor-051",
+   "sensor-068",
+   "sensor-085",
+   "sensor-102",
+   "sensor-119",
+   "sensor-136",
+   "sensor-153",
+   "sensor-170",
+   "sensor-187"
+  ],
+  "hash_8_bolum_en_dolu_bolu_ortalama": {
+   "sensor_id": 1.3399626666666666,
+   "bolge": 3.436269333333333,
+   "bolge_ve_sensor_id": 1.232488
+  },
+  "kaynak": "kanit/olcumler/iot_veri_kalitesi.json (sensor_sayimlari, bolge_sayimlari), kanit/olcumler/iot_dagilim_ozet.csv"
+ },
+ "gec_olay": {
+  "ornek_mesaj_sayisi": 20,
+  "60_s_den_fazla_geride": [
+   {
+    "sira": 9,
+    "kayit": {
+     "olay_zamani": "2026-11-14T18:57:07.966Z",
+     "sensor_id": "sensor-193",
+     "bolge": "Karadeniz",
+     "sicaklik": 15.28,
+     "nem": 62.5,
+     "titresim": 0.194
+    },
+    "en_yeni_olaydan_geride_s": 441.0
+   }
+  ],
+  "kart": "olayların %15'i en fazla 30 dk geç",
+  "kaynak": "kanit/olcumler/iot_ornek_20.jsonl (Kafka 'sensorler', okunma sırası)"
+ },
+ "tekrar": {
+  "fazladan_kopya": 6073,
+  "oran_yuzde": 0.20243333333333333,
+  "ornek": {
+   "olay_zamani": "2026-10-31T21:54:10.587Z",
+   "sensor_id": "sensor-166",
+   "bolge": "Doğu Anadolu",
+   "sicaklik": 10.27,
+   "nem": 63.9,
+   "titresim": 0.195
+  },
+  "kaynak": "kanit/olcumler/iot_veri_kalitesi.json"
+ },
+ "kirli_kayit": {
+  "eksik_alanli": 2983,
+  "null_degerli": 2947,
+  "en_az_bir_kusurlu": 5930,
+  "oran_yuzde": 0.19766666666666666,
+  "ornek_eksik": {
+   "olay_zamani": "2026-10-31T06:59:47.218Z",
+   "sensor_id": "sensor-190",
+   "sicaklik": 22.6,
+   "nem": 50.3,
+   "titresim": 0.191
+  },
+  "ornek_null": {
+   "olay_zamani": "2026-10-31T23:00:33.326Z",
+   "sensor_id": "sensor-066",
+   "bolge": null,
+   "sicaklik": 12.58,
+   "nem": 61.0,
+   "titresim": 0.104
+  },
+  "kaynak": "kanit/olcumler/iot_veri_kalitesi.json"
+ }
+}

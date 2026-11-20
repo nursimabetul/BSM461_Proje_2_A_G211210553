@@ -1,0 +1,477 @@
+{
+ "girdiler": {
+  "grup": "G211210553",
+  "ortalama_hiz_olay_s": 60000,
+  "tepe_kat": 8,
+  "saklama_gun": 1095,
+  "bayt_olay_toplu": 143.56746866666666,
+  "bayt_olay_akis_ortalama": 142.1,
+  "bayt_olay_akis_min": 137,
+  "bayt_olay_akis_max": 147,
+  "sikistirma_orani": {
+   "JSON": 1.0,
+   "Parquet-snappy": 0.10751700328323682,
+   "Parquet-zstd": 0.0804073149291857,
+   "Parquet-gzip": 0.07850659882313264
+  }
+ },
+ "notlar": "Onluk birimler (1 GB = 10^9 bayt). Bayt/olay toplu JSONL dosyasından (satır sonu dahil); akış örneği satır sonu hariçtir, iki ölçüm arasındaki ~1 bayt fark satır sonudur.",
+ "satirlar": [
+  {
+   "olcek": "1x",
+   "metrik": "ortalama_hiz",
+   "deger": 60000,
+   "birim": "olay/s",
+   "formul": "kart 60000 × 1",
+   "kaynak": "kanit/senaryo.txt"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "tepe_hiz",
+   "deger": 480000,
+   "birim": "olay/s",
+   "formul": "ortalama × 8",
+   "kaynak": "kanit/senaryo.txt"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "gunluk_olay",
+   "deger": 5184000000,
+   "birim": "olay/gün",
+   "formul": "ortalama × 86.400",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "ortalama_giris_json",
+   "deger": 8.61404812,
+   "birim": "MB/s",
+   "formul": "ortalama × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "tepe_giris_json",
+   "deger": 68.91238496,
+   "birim": "MB/s",
+   "formul": "tepe × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "gunluk_json",
+   "deger": 744.253757568,
+   "birim": "GB/gün",
+   "formul": "günlük olay × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "saklanan_json",
+   "deger": 814.95786453696,
+   "birim": "TB",
+   "formul": "günlük × 1095 gün",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "gunluk_Parquet-zstd",
+   "deger": 59.843446272,
+   "birim": "GB/gün",
+   "formul": "günlük JSON × 0.0804",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "saklanan_Parquet-zstd",
+   "deger": 65.52857366784,
+   "birim": "TB",
+   "formul": "saklanan JSON × 0.0804",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "gunluk_Parquet-snappy",
+   "deger": 80.019933696,
+   "birim": "GB/gün",
+   "formul": "günlük JSON × 0.1075",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "saklanan_Parquet-snappy",
+   "deger": 87.62182739712,
+   "birim": "TB",
+   "formul": "saklanan JSON × 0.1075",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "bir_gun_zstd_okuma_NVMe SSD (PCIe 4.0)",
+   "deger": 0.19947815424,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 5000 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "bir_gun_zstd_okuma_SATA SSD",
+   "deger": 1.813437765818182,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 550 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "bir_gun_zstd_okuma_10 Gb/s ağ",
+   "deger": 0.79791261696,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 1250 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "bir_gun_zstd_okuma_1 Gb/s ağ",
+   "deger": 7.9791261696,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 125 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "esik_gunluk_zstd",
+   "deger": "10–100 GB — diskten akıtarak tek makine (DuckDB/Polars)",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "esik_gunluk_json",
+   "deger": "500 GB – birkaç TB — tek sunucu zorlanır: ölçün, karar verin",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "1x",
+   "metrik": "esik_saklanan_zstd",
+   "deger": "> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "ortalama_hiz",
+   "deger": 600000,
+   "birim": "olay/s",
+   "formul": "kart 60000 × 10",
+   "kaynak": "kanit/senaryo.txt"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "tepe_hiz",
+   "deger": 4800000,
+   "birim": "olay/s",
+   "formul": "ortalama × 8",
+   "kaynak": "kanit/senaryo.txt"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "gunluk_olay",
+   "deger": 51840000000,
+   "birim": "olay/gün",
+   "formul": "ortalama × 86.400",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "ortalama_giris_json",
+   "deger": 86.14048119999998,
+   "birim": "MB/s",
+   "formul": "ortalama × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "tepe_giris_json",
+   "deger": 689.1238495999999,
+   "birim": "MB/s",
+   "formul": "tepe × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "gunluk_json",
+   "deger": 7442.5375756799995,
+   "birim": "GB/gün",
+   "formul": "günlük olay × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "saklanan_json",
+   "deger": 8149.578645369599,
+   "birim": "TB",
+   "formul": "günlük × 1095 gün",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "gunluk_Parquet-zstd",
+   "deger": 598.4344627199998,
+   "birim": "GB/gün",
+   "formul": "günlük JSON × 0.0804",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "saklanan_Parquet-zstd",
+   "deger": 655.2857366783999,
+   "birim": "TB",
+   "formul": "saklanan JSON × 0.0804",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "gunluk_Parquet-snappy",
+   "deger": 800.1993369599999,
+   "birim": "GB/gün",
+   "formul": "günlük JSON × 0.1075",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "saklanan_Parquet-snappy",
+   "deger": 876.2182739711999,
+   "birim": "TB",
+   "formul": "saklanan JSON × 0.1075",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "bir_gun_zstd_okuma_NVMe SSD (PCIe 4.0)",
+   "deger": 1.9947815423999995,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 5000 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "bir_gun_zstd_okuma_SATA SSD",
+   "deger": 18.134377658181812,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 550 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "bir_gun_zstd_okuma_10 Gb/s ağ",
+   "deger": 7.979126169599998,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 1250 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "bir_gun_zstd_okuma_1 Gb/s ağ",
+   "deger": 79.79126169599998,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 125 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "esik_gunluk_zstd",
+   "deger": "500 GB – birkaç TB — tek sunucu zorlanır: ölçün, karar verin",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "esik_gunluk_json",
+   "deger": "> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "10x",
+   "metrik": "esik_saklanan_zstd",
+   "deger": "> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "ortalama_hiz",
+   "deger": 6000000,
+   "birim": "olay/s",
+   "formul": "kart 60000 × 100",
+   "kaynak": "kanit/senaryo.txt"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "tepe_hiz",
+   "deger": 48000000,
+   "birim": "olay/s",
+   "formul": "ortalama × 8",
+   "kaynak": "kanit/senaryo.txt"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "gunluk_olay",
+   "deger": 518400000000,
+   "birim": "olay/gün",
+   "formul": "ortalama × 86.400",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "ortalama_giris_json",
+   "deger": 861.4048119999999,
+   "birim": "MB/s",
+   "formul": "ortalama × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "tepe_giris_json",
+   "deger": 6891.238495999999,
+   "birim": "MB/s",
+   "formul": "tepe × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "gunluk_json",
+   "deger": 74425.3757568,
+   "birim": "GB/gün",
+   "formul": "günlük olay × bayt/olay",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "saklanan_json",
+   "deger": 81495.786453696,
+   "birim": "TB",
+   "formul": "günlük × 1095 gün",
+   "kaynak": "hesap"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "gunluk_Parquet-zstd",
+   "deger": 5984.3446272,
+   "birim": "GB/gün",
+   "formul": "günlük JSON × 0.0804",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "saklanan_Parquet-zstd",
+   "deger": 6552.857366784,
+   "birim": "TB",
+   "formul": "saklanan JSON × 0.0804",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "gunluk_Parquet-snappy",
+   "deger": 8001.9933696,
+   "birim": "GB/gün",
+   "formul": "günlük JSON × 0.1075",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "saklanan_Parquet-snappy",
+   "deger": 8762.182739712,
+   "birim": "TB",
+   "formul": "saklanan JSON × 0.1075",
+   "kaynak": "kanit/olcumler/iot_bicim_ozet.csv"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "bir_gun_zstd_okuma_NVMe SSD (PCIe 4.0)",
+   "deger": 19.947815423999998,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 5000 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "bir_gun_zstd_okuma_SATA SSD",
+   "deger": 181.34377658181816,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 550 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "bir_gun_zstd_okuma_10 Gb/s ağ",
+   "deger": 79.79126169599999,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 1250 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "bir_gun_zstd_okuma_1 Gb/s ağ",
+   "deger": 797.91261696,
+   "birim": "dakika",
+   "formul": "günlük zstd ÷ 125 MB/s",
+   "kaynak": "H1 §5"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "esik_gunluk_zstd",
+   "deger": "> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "esik_gunluk_json",
+   "deger": "> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "100x",
+   "metrik": "esik_saklanan_zstd",
+   "deger": "> birkaç TB, sürekli büyüyor — dağıtık sistem gerekli",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "kit",
+   "metrik": "toplu_json",
+   "deger": 0.430702406,
+   "birim": "GB",
+   "formul": "ölçülen dosya baytı",
+   "kaynak": "kanit/olcumler/iot_veri_kalitesi.json"
+  },
+  {
+   "olcek": "kit",
+   "metrik": "esik_toplu_json",
+   "deger": "< 1 GB — belleğe rahat sığar (pandas)",
+   "birim": "bant",
+   "formul": "H1 §7",
+   "kaynak": "H1 §7"
+  },
+  {
+   "olcek": "kit",
+   "metrik": "kit_kac_saniyelik_gercek_veri",
+   "deger": 50.0,
+   "birim": "s",
+   "formul": "3000000 ÷ 60000",
+   "kaynak": "hesap"
+  }
+ ]
+}

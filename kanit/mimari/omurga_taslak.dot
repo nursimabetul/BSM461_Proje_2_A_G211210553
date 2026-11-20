@@ -1,0 +1,32 @@
+digraph omurga {
+  graph [rankdir=LR, splines=spline, nodesep=0.45, ranksep=0.55, pad=0.25, bgcolor="white",
+         fontname="Inter", fontsize=11, labelloc=t, labeljust=l,
+         label=<<FONT POINT-SIZE="15"><B>Omurga şeması — taslak (Adım 5)</B></FONT><BR/><FONT POINT-SIZE="10" COLOR="#5b6470">G211210553 · Şablon 3 IoT · kitteki bileşenler; <B>?</B> = henüz işlenmeyen katman (H8–H11), Adım 15'te kesinleşir</FONT><BR/> >];
+  node  [shape=box, style="rounded,filled", fontname="Inter", fontsize=10, color="#c9ced6", fillcolor="#ffffff",
+         penwidth=1.1, margin="0.16,0.08"];
+  edge  [fontname="Inter", fontsize=8.5, color="#7a838f", fontcolor="#3c434c", arrowsize=0.7, penwidth=1.1];
+
+  kaynak [label=<<B>① Olay kaynağı</B><BR/><FONT POINT-SIZE="9">200 sensör · 60.000 ölçüm/s<BR/>(kitte: araclar/uretici.py)</FONT>>, fillcolor="#eef6f6", color="#0f6e6e"];
+  toplama [label=<<B>② Toplama</B><BR/><FONT POINT-SIZE="9">Kafka üreticisi<BR/>acks=all · idempotent</FONT>>];
+  kuyruk [label=<<B>③ Günlük / Kuyruk</B><BR/><FONT POINT-SIZE="9">Apache Kafka 4.0.0 (KRaft)<BR/>konu: sensorler · anahtar: sensor_id<BR/>bölüm sayısı: ? (Z8)</FONT>>];
+  akis [label=<<B>④ Akış işleme</B><BR/><FONT POINT-SIZE="9">Spark 3.5.3 Structured Streaming<BR/>pencere · watermark: ? (H11)</FONT>>, style="rounded,filled,dashed"];
+  ham [label=<<B>⑤ Ham depolama</B><BR/><FONT POINT-SIZE="9">SeaweedFS 4.48 (S3 uyumlu)<BR/>s3://ham/iot/tarih=…/ · JSON Lines<BR/>işlenmiş: Parquet-zstd</FONT>>, fillcolor="#eef6f6", color="#0f6e6e"];
+  toplu [label=<<B>⑥ Toplu işleme</B><BR/><FONT POINT-SIZE="9">Spark 3.5.3 (local) · Delta 3.2.1<BR/>temizle → join sensorler.csv → topla</FONT>>, fillcolor="#eef6f6", color="#0f6e6e"];
+  servis [label=<<B>⑦ Servis deposu</B><BR/><FONT POINT-SIZE="9">? (aday: MongoDB 7.0 — H8)<BR/>p99 ≤ 50 ms</FONT>>, style="rounded,filled,dashed"];
+  sunum [label=<<B>⑧ Sunum</B><BR/><FONT POINT-SIZE="9">? pano (Python grafikleri /<BR/>Grafana — Adım 12)</FONT>>, style="rounded,filled,dashed"];
+  boyut [label=<<FONT POINT-SIZE="9"><B>Boyut tablosu</B><BR/>s3://ham/boyut/iot/sensorler.csv<BR/>200 satır</FONT>>, shape=note, fillcolor="#fafbfc"];
+
+  kaynak -> toplama [label="  A  "];
+  toplama -> kuyruk [label="  B  "];
+  kuyruk -> akis [label="  C  "];
+  akis -> servis [label="  D  ", style=dashed];
+  servis -> sunum [label="  E  ", style=dashed];
+  toplama -> ham [label="  F  "];
+  ham -> toplu [label="  G  "];
+  boyut -> toplu [style=dotted, arrowhead=none];
+  toplu -> servis [label="  H  ", style=dashed];
+  {rank=same; kaynak}
+  {rank=same; toplama}
+  {rank=same; kuyruk; ham}
+  {rank=same; akis; toplu}
+}
