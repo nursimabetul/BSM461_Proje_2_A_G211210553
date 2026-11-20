@@ -1,0 +1,194 @@
+== Physical Plan ==
+AdaptiveSparkPlan (33)
++- == Final Plan ==
+   * Sort (20)
+   +- AQEShuffleRead (19)
+      +- ShuffleQueryStage (18), Statistics(sizeInBytes=320.0 B, rowCount=5)
+         +- Exchange (17)
+            +- * Project (16)
+               +- * HashAggregate (15)
+                  +- AQEShuffleRead (14)
+                     +- ShuffleQueryStage (13), Statistics(sizeInBytes=4.4 KiB, rowCount=80)
+                        +- Exchange (12)
+                           +- * HashAggregate (11)
+                              +- * Project (10)
+                                 +- * BroadcastHashJoin Inner BuildRight (9)
+                                    :- * Project (4)
+                                    :  +- * Filter (3)
+                                    :     +- * ColumnarToRow (2)
+                                    :        +- Scan parquet  (1)
+                                    +- BroadcastQueryStage (8), Statistics(sizeInBytes=1032.0 KiB, rowCount=200)
+                                       +- BroadcastExchange (7)
+                                          +- * Filter (6)
+                                             +- Scan csv  (5)
++- == Initial Plan ==
+   Sort (32)
+   +- Exchange (31)
+      +- Project (30)
+         +- HashAggregate (29)
+            +- Exchange (28)
+               +- HashAggregate (27)
+                  +- Project (26)
+                     +- BroadcastHashJoin Inner BuildRight (25)
+                        :- Project (22)
+                        :  +- Filter (21)
+                        :     +- Scan parquet  (1)
+                        +- BroadcastExchange (24)
+                           +- Filter (23)
+                              +- Scan csv  (5)
+
+
+(1) Scan parquet 
+Output [4]: [sensor_id#1561, sicaklik#1563, titresim#1565, tarih#1566]
+Batched: true
+Location: PreparedDeltaFileIndex [s3a://tablolar/iot]
+PushedFilters: [IsNotNull(sensor_id)]
+ReadSchema: struct<sensor_id:string,sicaklik:double,titresim:double>
+
+(2) ColumnarToRow [codegen id : 2]
+Input [4]: [sensor_id#1561, sicaklik#1563, titresim#1565, tarih#1566]
+
+(3) Filter [codegen id : 2]
+Input [4]: [sensor_id#1561, sicaklik#1563, titresim#1565, tarih#1566]
+Condition : isnotnull(sensor_id#1561)
+
+(4) Project [codegen id : 2]
+Output [3]: [sensor_id#1561, sicaklik#1563, titresim#1565]
+Input [4]: [sensor_id#1561, sicaklik#1563, titresim#1565, tarih#1566]
+
+(5) Scan csv 
+Output [2]: [sensor_id#1591, model#1593]
+Batched: false
+Location: InMemoryFileIndex [s3a://ham/boyut/iot/sensorler.csv]
+PushedFilters: [IsNotNull(sensor_id)]
+ReadSchema: struct<sensor_id:string,model:string>
+
+(6) Filter [codegen id : 1]
+Input [2]: [sensor_id#1591, model#1593]
+Condition : isnotnull(sensor_id#1591)
+
+(7) BroadcastExchange
+Input [2]: [sensor_id#1591, model#1593]
+Arguments: HashedRelationBroadcastMode(List(input[0, string, false]),false), [plan_id=3554]
+
+(8) BroadcastQueryStage
+Output [2]: [sensor_id#1591, model#1593]
+Arguments: 0
+
+(9) BroadcastHashJoin [codegen id : 2]
+Left keys [1]: [sensor_id#1561]
+Right keys [1]: [sensor_id#1591]
+Join type: Inner
+Join condition: None
+
+(10) Project [codegen id : 2]
+Output [4]: [model#1593, CASE WHEN (sicaklik#1563 > 35.19) THEN 1 ELSE 0 END AS sicaklik_anomali#2071, CASE WHEN (titresim#1565 > 0.325) THEN 1 ELSE 0 END AS titresim_anomali#2083, CASE WHEN ((sicaklik#1563 > 35.19) OR (titresim#1565 > 0.325)) THEN 1 ELSE 0 END AS anomali#2096]
+Input [5]: [sensor_id#1561, sicaklik#1563, titresim#1565, sensor_id#1591, model#1593]
+
+(11) HashAggregate [codegen id : 2]
+Input [4]: [model#1593, sicaklik_anomali#2071, titresim_anomali#2083, anomali#2096]
+Keys [1]: [model#1593]
+Functions [4]: [partial_count(1), partial_sum(sicaklik_anomali#2071), partial_sum(titresim_anomali#2083), partial_sum(anomali#2096)]
+Aggregate Attributes [4]: [count#2238L, sum#2239L, sum#2240L, sum#2241L]
+Results [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+
+(12) Exchange
+Input [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+Arguments: hashpartitioning(model#1593, 8), ENSURE_REQUIREMENTS, [plan_id=3628]
+
+(13) ShuffleQueryStage
+Output [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+Arguments: 1
+
+(14) AQEShuffleRead
+Input [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+Arguments: coalesced
+
+(15) HashAggregate [codegen id : 3]
+Input [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+Keys [1]: [model#1593]
+Functions [4]: [count(1), sum(sicaklik_anomali#2071), sum(titresim_anomali#2083), sum(anomali#2096)]
+Aggregate Attributes [4]: [count(1)#2123L, sum(sicaklik_anomali#2071)#2125L, sum(titresim_anomali#2083)#2127L, sum(anomali#2096)#2129L]
+Results [5]: [model#1593, count(1)#2123L AS toplam_kayit#2124L, sum(sicaklik_anomali#2071)#2125L AS sicaklik_anomali_sayisi#2126L, sum(titresim_anomali#2083)#2127L AS titresim_anomali_sayisi#2128L, sum(anomali#2096)#2129L AS toplam_anomali#2130L]
+
+(16) Project [codegen id : 3]
+Output [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, round((cast((toplam_anomali#2130L * 100) as double) / cast(toplam_kayit#2124L as double)), 2) AS anomali_orani#2136]
+Input [5]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L]
+
+(17) Exchange
+Input [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: rangepartitioning(anomali_orani#2136 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=3673]
+
+(18) ShuffleQueryStage
+Output [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: 2
+
+(19) AQEShuffleRead
+Input [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: coalesced
+
+(20) Sort [codegen id : 4]
+Input [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: [anomali_orani#2136 DESC NULLS LAST], true, 0
+
+(21) Filter
+Input [4]: [sensor_id#1561, sicaklik#1563, titresim#1565, tarih#1566]
+Condition : isnotnull(sensor_id#1561)
+
+(22) Project
+Output [3]: [sensor_id#1561, sicaklik#1563, titresim#1565]
+Input [4]: [sensor_id#1561, sicaklik#1563, titresim#1565, tarih#1566]
+
+(23) Filter
+Input [2]: [sensor_id#1591, model#1593]
+Condition : isnotnull(sensor_id#1591)
+
+(24) BroadcastExchange
+Input [2]: [sensor_id#1591, model#1593]
+Arguments: HashedRelationBroadcastMode(List(input[0, string, false]),false), [plan_id=3517]
+
+(25) BroadcastHashJoin
+Left keys [1]: [sensor_id#1561]
+Right keys [1]: [sensor_id#1591]
+Join type: Inner
+Join condition: None
+
+(26) Project
+Output [4]: [model#1593, CASE WHEN (sicaklik#1563 > 35.19) THEN 1 ELSE 0 END AS sicaklik_anomali#2071, CASE WHEN (titresim#1565 > 0.325) THEN 1 ELSE 0 END AS titresim_anomali#2083, CASE WHEN ((sicaklik#1563 > 35.19) OR (titresim#1565 > 0.325)) THEN 1 ELSE 0 END AS anomali#2096]
+Input [5]: [sensor_id#1561, sicaklik#1563, titresim#1565, sensor_id#1591, model#1593]
+
+(27) HashAggregate
+Input [4]: [model#1593, sicaklik_anomali#2071, titresim_anomali#2083, anomali#2096]
+Keys [1]: [model#1593]
+Functions [4]: [partial_count(1), partial_sum(sicaklik_anomali#2071), partial_sum(titresim_anomali#2083), partial_sum(anomali#2096)]
+Aggregate Attributes [4]: [count#2238L, sum#2239L, sum#2240L, sum#2241L]
+Results [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+
+(28) Exchange
+Input [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+Arguments: hashpartitioning(model#1593, 8), ENSURE_REQUIREMENTS, [plan_id=3522]
+
+(29) HashAggregate
+Input [5]: [model#1593, count#2242L, sum#2243L, sum#2244L, sum#2245L]
+Keys [1]: [model#1593]
+Functions [4]: [count(1), sum(sicaklik_anomali#2071), sum(titresim_anomali#2083), sum(anomali#2096)]
+Aggregate Attributes [4]: [count(1)#2123L, sum(sicaklik_anomali#2071)#2125L, sum(titresim_anomali#2083)#2127L, sum(anomali#2096)#2129L]
+Results [5]: [model#1593, count(1)#2123L AS toplam_kayit#2124L, sum(sicaklik_anomali#2071)#2125L AS sicaklik_anomali_sayisi#2126L, sum(titresim_anomali#2083)#2127L AS titresim_anomali_sayisi#2128L, sum(anomali#2096)#2129L AS toplam_anomali#2130L]
+
+(30) Project
+Output [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, round((cast((toplam_anomali#2130L * 100) as double) / cast(toplam_kayit#2124L as double)), 2) AS anomali_orani#2136]
+Input [5]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L]
+
+(31) Exchange
+Input [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: rangepartitioning(anomali_orani#2136 DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=3526]
+
+(32) Sort
+Input [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: [anomali_orani#2136 DESC NULLS LAST], true, 0
+
+(33) AdaptiveSparkPlan
+Output [6]: [model#1593, toplam_kayit#2124L, sicaklik_anomali_sayisi#2126L, titresim_anomali_sayisi#2128L, toplam_anomali#2130L, anomali_orani#2136]
+Arguments: isFinalPlan=true
+
+

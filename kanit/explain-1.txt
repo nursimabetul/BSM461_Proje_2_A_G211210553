@@ -1,0 +1,53 @@
+== Physical Plan ==
+AdaptiveSparkPlan (8)
++- Sort (7)
+   +- Exchange (6)
+      +- HashAggregate (5)
+         +- Exchange (4)
+            +- HashAggregate (3)
+               +- Project (2)
+                  +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [2]: [sensor_id#5378, tarih#5383]
+Batched: true
+Location: PreparedDeltaFileIndex [s3a://tablolar/iot]
+PartitionFilters: [isnotnull(tarih#5383), (tarih#5383 >= 2026-11-13)]
+ReadSchema: struct<sensor_id:string>
+
+(2) Project
+Output [1]: [sensor_id#5378]
+Input [2]: [sensor_id#5378, tarih#5383]
+
+(3) HashAggregate
+Input [1]: [sensor_id#5378]
+Keys [1]: [sensor_id#5378]
+Functions [1]: [partial_count(1)]
+Aggregate Attributes [1]: [count#6159L]
+Results [2]: [sensor_id#5378, count#6160L]
+
+(4) Exchange
+Input [2]: [sensor_id#5378, count#6160L]
+Arguments: hashpartitioning(sensor_id#5378, 8), ENSURE_REQUIREMENTS, [plan_id=5279]
+
+(5) HashAggregate
+Input [2]: [sensor_id#5378, count#6160L]
+Keys [1]: [sensor_id#5378]
+Functions [1]: [count(1)]
+Aggregate Attributes [1]: [count(1)#5517L]
+Results [2]: [sensor_id#5378, count(1)#5517L AS count#5518L]
+
+(6) Exchange
+Input [2]: [sensor_id#5378, count#5518L]
+Arguments: rangepartitioning(count#5518L DESC NULLS LAST, 8), ENSURE_REQUIREMENTS, [plan_id=5282]
+
+(7) Sort
+Input [2]: [sensor_id#5378, count#5518L]
+Arguments: [count#5518L DESC NULLS LAST], true, 0
+
+(8) AdaptiveSparkPlan
+Output [2]: [sensor_id#5378, count#5518L]
+Arguments: isFinalPlan=false
+
+
