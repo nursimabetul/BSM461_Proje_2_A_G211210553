@@ -1,0 +1,163 @@
+{
+  "deney": "iot_mongo_aktarim",
+  "kosu_id": "20261124T185013Z_a62ee8dc",
+  "veritabani": "bsm461_iot",
+  "mongo_surumu": "7.0.48",
+  "pymongo_surumu": "4.10.1",
+  "girdi": "iot_mongo_toplu_20261124T185013Z_a62ee8dc.json",
+  "girdi_sha256": "f8facae73fb51c2a99ce5186d0ce45cfc6297f6bb85e680f00f37385d2ff589b",
+  "aktarici_sha256": "ffc3d9b154832ac7482d800d544fda419e6a3b82d07a5ec06a26df482d50a325",
+  "kaynak_kayit": 2988010,
+  "kaynak_surumu": 0,
+  "koleksiyonlar": [
+    {
+      "koleksiyon": "model_anomali",
+      "beklenen": 5,
+      "once": 0,
+      "ilk_aktarim": 5,
+      "tekrar_aktarim": 5,
+      "ikinci_aktarim_yeni_belge": 0,
+      "icerik_ayni": true,
+      "indeksler": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "kosu_id": 1,
+            "model": 1
+          },
+          "name": "kosu_dogal_anahtar",
+          "unique": true
+        },
+        {
+          "v": 2,
+          "key": {
+            "kosu_id": 1,
+            "anomali_orani": -1,
+            "model": 1
+          },
+          "name": "kosu_anomali_sira"
+        }
+      ]
+    },
+    {
+      "koleksiyon": "model_sensor_ozet",
+      "beklenen": 5,
+      "once": 0,
+      "ilk_aktarim": 5,
+      "tekrar_aktarim": 5,
+      "ikinci_aktarim_yeni_belge": 0,
+      "icerik_ayni": true,
+      "indeksler": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "kosu_id": 1,
+            "model": 1
+          },
+          "name": "kosu_dogal_anahtar",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "koleksiyon": "yil_sensor_ozet",
+      "beklenen": 8,
+      "once": 0,
+      "ilk_aktarim": 8,
+      "tekrar_aktarim": 8,
+      "ikinci_aktarim_yeni_belge": 0,
+      "icerik_ayni": true,
+      "indeksler": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "kosu_id": 1,
+            "kurulum_yili": 1
+          },
+          "name": "kosu_dogal_anahtar",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "koleksiyon": "bolge_saatlik",
+      "beklenen": 168,
+      "once": 0,
+      "ilk_aktarim": 168,
+      "tekrar_aktarim": 168,
+      "ikinci_aktarim_yeni_belge": 0,
+      "icerik_ayni": true,
+      "indeksler": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "kosu_id": 1,
+            "bolge": 1,
+            "saat": 1
+          },
+          "name": "kosu_dogal_anahtar",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "koleksiyon": "bolge_gece_gunduz",
+      "beklenen": 7,
+      "once": 0,
+      "ilk_aktarim": 7,
+      "tekrar_aktarim": 7,
+      "ikinci_aktarim_yeni_belge": 0,
+      "icerik_ayni": true,
+      "indeksler": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "kosu_id": 1,
+            "bolge": 1
+          },
+          "name": "kosu_dogal_anahtar",
+          "unique": true
+        }
+      ]
+    }
+  ],
+  "aktif_kosu_dogrulandi": true,
+  "toplam_sonuc_belge": 193,
+  "kontrol_zamani": "2026-11-24T18:52:03.398704+00:00",
+  "not": "Kucuk toplu ozetler; ham veriler tasinmadi. Ayni kosu/icerik iki kez gercekten yazildi ve geri okundu. Gecikme veya yuk testi degil. Yerel standalone; w=1,j=True. Uc uca exactly-once iddiasi yok."
+}

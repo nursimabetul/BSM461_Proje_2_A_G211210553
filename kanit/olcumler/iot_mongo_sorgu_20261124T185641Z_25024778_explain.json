@@ -1,0 +1,1250 @@
+{
+  "aktif_kosu": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.servis_meta",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "_id": {
+          "$eq": "aktif_toplu"
+        }
+      },
+      "queryHash": "20943CF8",
+      "planCacheKey": "DA82E0AF",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "kosu_id": 1,
+          "veri_baslangici": 1,
+          "veri_bitisi": 1,
+          "uretim_zamani": 1,
+          "yayin_zamani": 1
+        },
+        "inputStage": {
+          "stage": "IDHACK"
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 1,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 1,
+      "totalDocsExamined": 1,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 1,
+        "executionTimeMillisEstimate": 0,
+        "works": 2,
+        "advanced": 1,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "kosu_id": 1,
+          "veri_baslangici": 1,
+          "veri_bitisi": 1,
+          "uretim_zamani": 1,
+          "yayin_zamani": 1
+        },
+        "inputStage": {
+          "stage": "IDHACK",
+          "nReturned": 1,
+          "executionTimeMillisEstimate": 0,
+          "works": 2,
+          "advanced": 1,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keysExamined": 1,
+          "docsExamined": 1
+        }
+      }
+    },
+    "command": {
+      "find": "servis_meta",
+      "filter": {
+        "_id": "aktif_toplu"
+      },
+      "projection": {
+        "_id": 0,
+        "kosu_id": 1,
+        "veri_baslangici": 1,
+        "veri_bitisi": 1,
+        "uretim_zamani": 1,
+        "yayin_zamani": 1
+      },
+      "limit": 1,
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  },
+  "model_anomali": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.model_anomali",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "kosu_id": {
+          "$eq": "20261124T185013Z_a62ee8dc"
+        }
+      },
+      "queryHash": "E30383C3",
+      "planCacheKey": "0EB728EF",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "model": 1,
+          "toplam_kayit": 1,
+          "toplam_anomali": 1,
+          "anomali_orani": 1,
+          "sicaklik_anomali_sayisi": 1,
+          "titresim_anomali_sayisi": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "kosu_id": 1,
+              "anomali_orani": -1,
+              "model": 1
+            },
+            "indexName": "kosu_anomali_sira",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "anomali_orani": [],
+              "model": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "anomali_orani": [
+                "[MaxKey, MinKey]"
+              ],
+              "model": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "stage": "SORT",
+          "sortPattern": {
+            "anomali_orani": -1,
+            "model": 1
+          },
+          "memLimit": 104857600,
+          "type": "simple",
+          "inputStage": {
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 0,
+              "model": 1,
+              "toplam_kayit": 1,
+              "toplam_anomali": 1,
+              "anomali_orani": 1,
+              "sicaklik_anomali_sayisi": 1,
+              "titresim_anomali_sayisi": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "kosu_id": 1,
+                  "model": 1
+                },
+                "indexName": "kosu_dogal_anahtar",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "kosu_id": [],
+                  "model": []
+                },
+                "isUnique": true,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "kosu_id": [
+                    "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+                  ],
+                  "model": [
+                    "[MinKey, MaxKey]"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 5,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 5,
+      "totalDocsExamined": 5,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 5,
+        "executionTimeMillisEstimate": 0,
+        "works": 7,
+        "advanced": 5,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "model": 1,
+          "toplam_kayit": 1,
+          "toplam_anomali": 1,
+          "anomali_orani": 1,
+          "sicaklik_anomali_sayisi": 1,
+          "titresim_anomali_sayisi": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "nReturned": 5,
+          "executionTimeMillisEstimate": 0,
+          "works": 7,
+          "advanced": 5,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 5,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 5,
+            "executionTimeMillisEstimate": 0,
+            "works": 6,
+            "advanced": 5,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "kosu_id": 1,
+              "anomali_orani": -1,
+              "model": 1
+            },
+            "indexName": "kosu_anomali_sira",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "anomali_orani": [],
+              "model": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "anomali_orani": [
+                "[MaxKey, MinKey]"
+              ],
+              "model": [
+                "[MinKey, MaxKey]"
+              ]
+            },
+            "keysExamined": 5,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "command": {
+      "find": "model_anomali",
+      "filter": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "projection": {
+        "_id": 0,
+        "model": 1,
+        "toplam_kayit": 1,
+        "toplam_anomali": 1,
+        "anomali_orani": 1,
+        "sicaklik_anomali_sayisi": 1,
+        "titresim_anomali_sayisi": 1
+      },
+      "sort": {
+        "anomali_orani": -1,
+        "model": 1
+      },
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  },
+  "model_sensor_ozet": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.model_sensor_ozet",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "kosu_id": {
+          "$eq": "20261124T185013Z_a62ee8dc"
+        }
+      },
+      "queryHash": "685AF851",
+      "planCacheKey": "6C006AC4",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "model": 1,
+          "sensor_sayisi": 1,
+          "ortalama_sensor_anomali_orani": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "kosu_id": 1,
+              "model": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "model": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "model": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 5,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 5,
+      "totalDocsExamined": 5,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 5,
+        "executionTimeMillisEstimate": 0,
+        "works": 6,
+        "advanced": 5,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "model": 1,
+          "sensor_sayisi": 1,
+          "ortalama_sensor_anomali_orani": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "nReturned": 5,
+          "executionTimeMillisEstimate": 0,
+          "works": 6,
+          "advanced": 5,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 5,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 5,
+            "executionTimeMillisEstimate": 0,
+            "works": 6,
+            "advanced": 5,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "kosu_id": 1,
+              "model": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "model": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "model": [
+                "[MinKey, MaxKey]"
+              ]
+            },
+            "keysExamined": 5,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "command": {
+      "find": "model_sensor_ozet",
+      "filter": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "projection": {
+        "_id": 0,
+        "model": 1,
+        "sensor_sayisi": 1,
+        "ortalama_sensor_anomali_orani": 1
+      },
+      "sort": {
+        "model": 1
+      },
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  },
+  "yil_sensor_ozet": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.yil_sensor_ozet",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "kosu_id": {
+          "$eq": "20261124T185013Z_a62ee8dc"
+        }
+      },
+      "queryHash": "8835EE9D",
+      "planCacheKey": "92ED2A1F",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "kurulum_yili": 1,
+          "sensor_sayisi": 1,
+          "ortalama_sensor_anomali_orani": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "kosu_id": 1,
+              "kurulum_yili": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "kurulum_yili": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "kurulum_yili": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 8,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 8,
+      "totalDocsExamined": 8,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 8,
+        "executionTimeMillisEstimate": 0,
+        "works": 9,
+        "advanced": 8,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "kurulum_yili": 1,
+          "sensor_sayisi": 1,
+          "ortalama_sensor_anomali_orani": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "nReturned": 8,
+          "executionTimeMillisEstimate": 0,
+          "works": 9,
+          "advanced": 8,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 8,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 8,
+            "executionTimeMillisEstimate": 0,
+            "works": 9,
+            "advanced": 8,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "kosu_id": 1,
+              "kurulum_yili": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "kurulum_yili": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "kurulum_yili": [
+                "[MinKey, MaxKey]"
+              ]
+            },
+            "keysExamined": 8,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "command": {
+      "find": "yil_sensor_ozet",
+      "filter": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "projection": {
+        "_id": 0,
+        "kurulum_yili": 1,
+        "sensor_sayisi": 1,
+        "ortalama_sensor_anomali_orani": 1
+      },
+      "sort": {
+        "kurulum_yili": 1
+      },
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  },
+  "secili_bolge_saatlik": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.bolge_saatlik",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "$and": [
+          {
+            "bolge": {
+              "$eq": "Akdeniz"
+            }
+          },
+          {
+            "kosu_id": {
+              "$eq": "20261124T185013Z_a62ee8dc"
+            }
+          }
+        ]
+      },
+      "queryHash": "E7322501",
+      "planCacheKey": "ED7F1416",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "bolge": 1,
+          "saat": 1,
+          "ortalama_sicaklik": 1,
+          "ortalama_nem": 1,
+          "olay_sayisi": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "kosu_id": 1,
+              "bolge": 1,
+              "saat": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "bolge": [],
+              "saat": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "bolge": [
+                "[\"Akdeniz\", \"Akdeniz\"]"
+              ],
+              "saat": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 24,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 24,
+      "totalDocsExamined": 24,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 24,
+        "executionTimeMillisEstimate": 0,
+        "works": 25,
+        "advanced": 24,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "bolge": 1,
+          "saat": 1,
+          "ortalama_sicaklik": 1,
+          "ortalama_nem": 1,
+          "olay_sayisi": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "nReturned": 24,
+          "executionTimeMillisEstimate": 0,
+          "works": 25,
+          "advanced": 24,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 24,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 24,
+            "executionTimeMillisEstimate": 0,
+            "works": 25,
+            "advanced": 24,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "kosu_id": 1,
+              "bolge": 1,
+              "saat": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "bolge": [],
+              "saat": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "bolge": [
+                "[\"Akdeniz\", \"Akdeniz\"]"
+              ],
+              "saat": [
+                "[MinKey, MaxKey]"
+              ]
+            },
+            "keysExamined": 24,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "command": {
+      "find": "bolge_saatlik",
+      "filter": {
+        "kosu_id": "20261124T185013Z_a62ee8dc",
+        "bolge": "Akdeniz"
+      },
+      "projection": {
+        "_id": 0,
+        "bolge": 1,
+        "saat": 1,
+        "ortalama_sicaklik": 1,
+        "ortalama_nem": 1,
+        "olay_sayisi": 1
+      },
+      "sort": {
+        "saat": 1
+      },
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  },
+  "tum_bolgeler_saatlik": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.bolge_saatlik",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "kosu_id": {
+          "$eq": "20261124T185013Z_a62ee8dc"
+        }
+      },
+      "queryHash": "25D2AF66",
+      "planCacheKey": "3567078A",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "bolge": 1,
+          "saat": 1,
+          "ortalama_sicaklik": 1,
+          "ortalama_nem": 1,
+          "olay_sayisi": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "kosu_id": 1,
+              "bolge": 1,
+              "saat": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "bolge": [],
+              "saat": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "bolge": [
+                "[MinKey, MaxKey]"
+              ],
+              "saat": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 168,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 168,
+      "totalDocsExamined": 168,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 168,
+        "executionTimeMillisEstimate": 0,
+        "works": 169,
+        "advanced": 168,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "bolge": 1,
+          "saat": 1,
+          "ortalama_sicaklik": 1,
+          "ortalama_nem": 1,
+          "olay_sayisi": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "nReturned": 168,
+          "executionTimeMillisEstimate": 0,
+          "works": 169,
+          "advanced": 168,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 168,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 168,
+            "executionTimeMillisEstimate": 0,
+            "works": 169,
+            "advanced": 168,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "kosu_id": 1,
+              "bolge": 1,
+              "saat": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "bolge": [],
+              "saat": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "bolge": [
+                "[MinKey, MaxKey]"
+              ],
+              "saat": [
+                "[MinKey, MaxKey]"
+              ]
+            },
+            "keysExamined": 168,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "command": {
+      "find": "bolge_saatlik",
+      "filter": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "projection": {
+        "_id": 0,
+        "bolge": 1,
+        "saat": 1,
+        "ortalama_sicaklik": 1,
+        "ortalama_nem": 1,
+        "olay_sayisi": 1
+      },
+      "sort": {
+        "bolge": 1,
+        "saat": 1
+      },
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  },
+  "gece_gunduz": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "bsm461_iot.bolge_gece_gunduz",
+      "indexFilterSet": false,
+      "parsedQuery": {
+        "kosu_id": {
+          "$eq": "20261124T185013Z_a62ee8dc"
+        }
+      },
+      "queryHash": "74A962DB",
+      "planCacheKey": "BF881D11",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "winningPlan": {
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 0,
+          "bolge": 1,
+          "gunduz_ort_sicaklik": 1,
+          "gece_ort_sicaklik": 1,
+          "sicaklik_farki": 1,
+          "gunduz_ort_nem": 1,
+          "gece_ort_nem": 1,
+          "nem_farki": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "kosu_id": 1,
+              "bolge": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "bolge": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "bolge": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 7,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 7,
+      "totalDocsExamined": 7,
+      "executionStages": {
+        "stage": "PROJECTION_SIMPLE",
+        "nReturned": 7,
+        "executionTimeMillisEstimate": 0,
+        "works": 8,
+        "advanced": 7,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "transformBy": {
+          "_id": 0,
+          "bolge": 1,
+          "gunduz_ort_sicaklik": 1,
+          "gece_ort_sicaklik": 1,
+          "sicaklik_farki": 1,
+          "gunduz_ort_nem": 1,
+          "gece_ort_nem": 1,
+          "nem_farki": 1
+        },
+        "inputStage": {
+          "stage": "FETCH",
+          "nReturned": 7,
+          "executionTimeMillisEstimate": 0,
+          "works": 8,
+          "advanced": 7,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 7,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 7,
+            "executionTimeMillisEstimate": 0,
+            "works": 8,
+            "advanced": 7,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "kosu_id": 1,
+              "bolge": 1
+            },
+            "indexName": "kosu_dogal_anahtar",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "kosu_id": [],
+              "bolge": []
+            },
+            "isUnique": true,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "kosu_id": [
+                "[\"20261124T185013Z_a62ee8dc\", \"20261124T185013Z_a62ee8dc\"]"
+              ],
+              "bolge": [
+                "[MinKey, MaxKey]"
+              ]
+            },
+            "keysExamined": 7,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "command": {
+      "find": "bolge_gece_gunduz",
+      "filter": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "projection": {
+        "_id": 0,
+        "bolge": 1,
+        "gunduz_ort_sicaklik": 1,
+        "gece_ort_sicaklik": 1,
+        "sicaklik_farki": 1,
+        "gunduz_ort_nem": 1,
+        "gece_ort_nem": 1,
+        "nem_farki": 1
+      },
+      "sort": {
+        "bolge": 1
+      },
+      "$db": "bsm461_iot"
+    },
+    "serverInfo": {
+      "host": "891bf0f3c50e",
+      "port": 27017,
+      "version": "7.0.48",
+      "gitVersion": "6937736f0539a5d4c8edb2970255b9369cb385a5"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "forceClassicEngine"
+    },
+    "ok": 1.0
+  }
+}

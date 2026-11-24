@@ -1,0 +1,550 @@
+{
+  "deney": "iot_mongo_sorgu",
+  "kosu_id": "20261124T185641Z_25024778",
+  "toplu_kosu": "20261124T185013Z_a62ee8dc",
+  "kaynak_surumu": 0,
+  "veritabani": "bsm461_iot",
+  "mongo_surumu": "7.0.48",
+  "pymongo_surumu": "4.10.1",
+  "olcum_betigi_sha256": "cc3e472db953c67b5094227ee5cc8e2a0d68edcc0c239608de80cecd5f9ab65e",
+  "kosullar": {
+    "istemci": 1,
+    "eszamanli_istek": 1,
+    "tur": 3,
+    "tur_basina_sorgu_tekrari": 1000,
+    "tur_basina_isinma": 20,
+    "onbellek": "sicak; OS/MongoDB cache temizlenmedi",
+    "olcum": "perf_counter_ns; sorgu olusturma, ag, sunucu, tum cursor sonuclarini alma ve BSON cozme dahil; dogruluk karsilastirmasi zaman araligi disinda",
+    "p99_yontemi": "nearest-rank: sirali surelerde ceil(0.99*N)",
+    "hedef_p99_ms": 50.0,
+    "secili_bolge": "Akdeniz"
+  },
+  "sorgular": [
+    {
+      "ad": "aktif_kosu",
+      "koleksiyon": "servis_meta",
+      "filtre": {
+        "_id": "aktif_toplu"
+      },
+      "alanlar": {
+        "_id": 0,
+        "kosu_id": 1,
+        "veri_baslangici": 1,
+        "veri_bitisi": 1,
+        "uretim_zamani": 1,
+        "yayin_zamani": 1
+      },
+      "sirala": [],
+      "limit": 1
+    },
+    {
+      "ad": "model_anomali",
+      "koleksiyon": "model_anomali",
+      "filtre": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "alanlar": {
+        "_id": 0,
+        "model": 1,
+        "toplam_kayit": 1,
+        "toplam_anomali": 1,
+        "anomali_orani": 1,
+        "sicaklik_anomali_sayisi": 1,
+        "titresim_anomali_sayisi": 1
+      },
+      "sirala": [
+        [
+          "anomali_orani",
+          -1
+        ],
+        [
+          "model",
+          1
+        ]
+      ]
+    },
+    {
+      "ad": "model_sensor_ozet",
+      "koleksiyon": "model_sensor_ozet",
+      "filtre": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "alanlar": {
+        "_id": 0,
+        "model": 1,
+        "sensor_sayisi": 1,
+        "ortalama_sensor_anomali_orani": 1
+      },
+      "sirala": [
+        [
+          "model",
+          1
+        ]
+      ]
+    },
+    {
+      "ad": "yil_sensor_ozet",
+      "koleksiyon": "yil_sensor_ozet",
+      "filtre": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "alanlar": {
+        "_id": 0,
+        "kurulum_yili": 1,
+        "sensor_sayisi": 1,
+        "ortalama_sensor_anomali_orani": 1
+      },
+      "sirala": [
+        [
+          "kurulum_yili",
+          1
+        ]
+      ]
+    },
+    {
+      "ad": "secili_bolge_saatlik",
+      "koleksiyon": "bolge_saatlik",
+      "filtre": {
+        "kosu_id": "20261124T185013Z_a62ee8dc",
+        "bolge": "Akdeniz"
+      },
+      "alanlar": {
+        "_id": 0,
+        "bolge": 1,
+        "saat": 1,
+        "ortalama_sicaklik": 1,
+        "ortalama_nem": 1,
+        "olay_sayisi": 1
+      },
+      "sirala": [
+        [
+          "saat",
+          1
+        ]
+      ]
+    },
+    {
+      "ad": "tum_bolgeler_saatlik",
+      "koleksiyon": "bolge_saatlik",
+      "filtre": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "alanlar": {
+        "_id": 0,
+        "bolge": 1,
+        "saat": 1,
+        "ortalama_sicaklik": 1,
+        "ortalama_nem": 1,
+        "olay_sayisi": 1
+      },
+      "sirala": [
+        [
+          "bolge",
+          1
+        ],
+        [
+          "saat",
+          1
+        ]
+      ]
+    },
+    {
+      "ad": "gece_gunduz",
+      "koleksiyon": "bolge_gece_gunduz",
+      "filtre": {
+        "kosu_id": "20261124T185013Z_a62ee8dc"
+      },
+      "alanlar": {
+        "_id": 0,
+        "bolge": 1,
+        "gunduz_ort_sicaklik": 1,
+        "gece_ort_sicaklik": 1,
+        "sicaklik_farki": 1,
+        "gunduz_ort_nem": 1,
+        "gece_ort_nem": 1,
+        "nem_farki": 1
+      },
+      "sirala": [
+        [
+          "bolge",
+          1
+        ]
+      ]
+    }
+  ],
+  "turlar": [
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.398118783,
+      "min_ms": 0.293124,
+      "maks_ms": 1.176197,
+      "p50_ms": 0.342929,
+      "p95_ms": 0.717159,
+      "p99_ms": 0.927177,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "aktif_kosu",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.436606082,
+      "min_ms": 0.330328,
+      "maks_ms": 1.470722,
+      "p50_ms": 0.377031,
+      "p95_ms": 0.763563,
+      "p99_ms": 0.977981,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_anomali",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.422571001,
+      "min_ms": 0.321127,
+      "maks_ms": 1.496523,
+      "p50_ms": 0.36263,
+      "p95_ms": 0.745462,
+      "p99_ms": 1.008483,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_sensor_ozet",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.425089601,
+      "min_ms": 0.322726,
+      "maks_ms": 1.622734,
+      "p50_ms": 0.36323,
+      "p95_ms": 0.791065,
+      "p99_ms": 1.024885,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "yil_sensor_ozet",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.494916955,
+      "min_ms": 0.377332,
+      "maks_ms": 2.167679,
+      "p50_ms": 0.425235,
+      "p95_ms": 0.903875,
+      "p99_ms": 1.173297,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "secili_bolge_saatlik",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 1.146031074,
+      "min_ms": 0.907075,
+      "maks_ms": 3.50769,
+      "p50_ms": 1.004583,
+      "p95_ms": 2.003166,
+      "p99_ms": 2.503907,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "tum_bolgeler_saatlik",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.483835637,
+      "min_ms": 0.335727,
+      "maks_ms": 1.304208,
+      "p50_ms": 0.408034,
+      "p95_ms": 0.905974,
+      "p99_ms": 1.2143,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "gece_gunduz",
+      "tur": 1
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.381026473,
+      "min_ms": 0.293924,
+      "maks_ms": 1.417017,
+      "p50_ms": 0.350129,
+      "p95_ms": 0.559146,
+      "p99_ms": 0.749462,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "aktif_kosu",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.420090808,
+      "min_ms": 0.330028,
+      "maks_ms": 2.147478,
+      "p50_ms": 0.385032,
+      "p95_ms": 0.612951,
+      "p99_ms": 0.84657,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_anomali",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.406036645,
+      "min_ms": 0.323527,
+      "maks_ms": 1.148995,
+      "p50_ms": 0.374431,
+      "p95_ms": 0.590249,
+      "p99_ms": 0.778864,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_sensor_ozet",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.404816543,
+      "min_ms": 0.324927,
+      "maks_ms": 1.007683,
+      "p50_ms": 0.371331,
+      "p95_ms": 0.577148,
+      "p99_ms": 0.845169,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "yil_sensor_ozet",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.470549976,
+      "min_ms": 0.380931,
+      "maks_ms": 1.068588,
+      "p50_ms": 0.437036,
+      "p95_ms": 0.661854,
+      "p99_ms": 0.865872,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "secili_bolge_saatlik",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 1.102089507,
+      "min_ms": 0.913475,
+      "maks_ms": 2.382897,
+      "p50_ms": 1.034186,
+      "p95_ms": 1.524826,
+      "p99_ms": 1.894656,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "tum_bolgeler_saatlik",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.462138677,
+      "min_ms": 0.340028,
+      "maks_ms": 1.596332,
+      "p50_ms": 0.425735,
+      "p95_ms": 0.700758,
+      "p99_ms": 0.924977,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "gece_gunduz",
+      "tur": 2
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.363058993,
+      "min_ms": 0.291923,
+      "maks_ms": 1.049286,
+      "p50_ms": 0.340228,
+      "p95_ms": 0.48414,
+      "p99_ms": 0.622851,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "aktif_kosu",
+      "tur": 3
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.399754328,
+      "min_ms": 0.328127,
+      "maks_ms": 0.839368,
+      "p50_ms": 0.376731,
+      "p95_ms": 0.537444,
+      "p99_ms": 0.709158,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_anomali",
+      "tur": 3
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.387789559,
+      "min_ms": 0.320427,
+      "maks_ms": 1.207499,
+      "p50_ms": 0.36363,
+      "p95_ms": 0.509142,
+      "p99_ms": 0.711258,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_sensor_ozet",
+      "tur": 3
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.38607201,
+      "min_ms": 0.321126,
+      "maks_ms": 1.500123,
+      "p50_ms": 0.36243,
+      "p95_ms": 0.515242,
+      "p99_ms": 0.640753,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "yil_sensor_ozet",
+      "tur": 3
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.450866702,
+      "min_ms": 0.377631,
+      "maks_ms": 1.33241,
+      "p50_ms": 0.427535,
+      "p95_ms": 0.577848,
+      "p99_ms": 0.72466,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "secili_bolge_saatlik",
+      "tur": 3
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 1.057940572,
+      "min_ms": 0.903974,
+      "maks_ms": 5.659064,
+      "p50_ms": 1.005382,
+      "p95_ms": 1.313608,
+      "p99_ms": 1.570329,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "tum_bolgeler_saatlik",
+      "tur": 3
+    },
+    {
+      "ornek": 1000,
+      "ortalama_ms": 0.438408878,
+      "min_ms": 0.339728,
+      "maks_ms": 1.176697,
+      "p50_ms": 0.409633,
+      "p95_ms": 0.602549,
+      "p99_ms": 0.85107,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "gece_gunduz",
+      "tur": 3
+    }
+  ],
+  "birlesik": [
+    {
+      "ornek": 3000,
+      "ortalama_ms": 0.38073474966666665,
+      "min_ms": 0.291923,
+      "maks_ms": 1.417017,
+      "p50_ms": 0.344629,
+      "p95_ms": 0.579648,
+      "p99_ms": 0.831868,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "aktif_kosu",
+      "sonuc_belge": 1
+    },
+    {
+      "ornek": 3000,
+      "ortalama_ms": 0.4188170726666667,
+      "min_ms": 0.328127,
+      "maks_ms": 2.147478,
+      "p50_ms": 0.379031,
+      "p95_ms": 0.638953,
+      "p99_ms": 0.886673,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_anomali",
+      "sonuc_belge": 5
+    },
+    {
+      "ornek": 3000,
+      "ortalama_ms": 0.405465735,
+      "min_ms": 0.320427,
+      "maks_ms": 1.496523,
+      "p50_ms": 0.36673,
+      "p95_ms": 0.620751,
+      "p99_ms": 0.914376,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "model_sensor_ozet",
+      "sonuc_belge": 5
+    },
+    {
+      "ornek": 3000,
+      "ortalama_ms": 0.4053260513333333,
+      "min_ms": 0.321126,
+      "maks_ms": 1.622734,
+      "p50_ms": 0.36573,
+      "p95_ms": 0.626951,
+      "p99_ms": 0.909376,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "yil_sensor_ozet",
+      "sonuc_belge": 8
+    },
+    {
+      "ornek": 3000,
+      "ortalama_ms": 0.472111211,
+      "min_ms": 0.377332,
+      "maks_ms": 2.167679,
+      "p50_ms": 0.429535,
+      "p95_ms": 0.697757,
+      "p99_ms": 1.014584,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "secili_bolge_saatlik",
+      "sonuc_belge": 24
+    },
+    {
+      "ornek": 3000,
+      "ortalama_ms": 1.1020203843333334,
+      "min_ms": 0.903974,
+      "maks_ms": 5.659064,
+      "p50_ms": 1.015484,
+      "p95_ms": 1.570329,
+      "p99_ms": 2.269288,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "tum_bolgeler_saatlik",
+      "sonuc_belge": 168
+    },
+    {
+      "ornek": 3000,
+      "ortalama_ms": 0.461461064,
+      "min_ms": 0.335727,
+      "maks_ms": 1.596332,
+      "p50_ms": 0.414834,
+      "p95_ms": 0.73016,
+      "p99_ms": 1.037785,
+      "hedef_ustu_istek": 0,
+      "hedef_saglandi": true,
+      "sorgu": "gece_gunduz",
+      "sonuc_belge": 7
+    }
+  ],
+  "hata_sayisi": 0,
+  "aktif_kosu_degismedi": true,
+  "hedef_tum_turlarda_saglandi": true,
+  "hedef_birlesik_saglandi": true,
+  "ham_tekrarlar": "iot_mongo_sorgu_20261124T185641Z_25024778_tekrarlar.csv",
+  "explain": "iot_mongo_sorgu_20261124T185641Z_25024778_explain.json",
+  "not": "Kucuk toplu ozetlerde tek istemciyle yerel okuma testi. Pano render suresi ve uretim veri girisi dahil degil. 60.000/480.000 olay/sn kapasitesi, cok istemci, cold-cache veya uretim SLA garantisi kanitlanmaz. Explain sureleri istemci p99'u yerine kullanilmaz."
+}
