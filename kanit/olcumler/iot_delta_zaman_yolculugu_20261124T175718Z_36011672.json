@@ -1,0 +1,75 @@
+{
+  "deney": "iot_delta_zaman_yolculugu",
+  "kosu": "20261124T175718Z_36011672",
+  "kaynak": "s3a://tablolar/iot",
+  "kaynak_surumu": 0,
+  "hedef": "s3a://tablolar/iot_z7_deney/zaman_yolculugu/20261124T175718Z_36011672",
+  "yeni_gun": "2026-11-14",
+  "not": "Son gunun zamanlari +1 gun kaydirildi; sentetik deney verisi. Tek deney kosusu; performans testi degil.",
+  "surum_gecmisi": [
+    {
+      "version": 1,
+      "timestamp": "2026-11-24 17:57:44",
+      "userId": null,
+      "userName": null,
+      "operation": "WRITE",
+      "operationParameters": {
+        "mode": "Append",
+        "partitionBy": "[]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": 0,
+      "isolationLevel": "Serializable",
+      "isBlindAppend": true,
+      "operationMetrics": {
+        "numOutputRows": "213440",
+        "numOutputBytes": "3298346",
+        "numFiles": "4"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.3 Delta-Lake/3.2.1"
+    },
+    {
+      "version": 0,
+      "timestamp": "2026-11-24 17:57:41",
+      "userId": null,
+      "userName": null,
+      "operation": "WRITE",
+      "operationParameters": {
+        "mode": "ErrorIfExists",
+        "partitionBy": "[\"tarih\"]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": null,
+      "isolationLevel": "Serializable",
+      "isBlindAppend": true,
+      "operationMetrics": {
+        "numOutputRows": "2988010",
+        "numOutputBytes": "46132860",
+        "numFiles": "56"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.3 Delta-Lake/3.2.1"
+    }
+  ],
+  "metrikler": {
+    "kaynak_kayit": 2988010,
+    "surum_0_kayit": 2988010,
+    "eklenen_sentetik_kayit": 213440,
+    "surum_1_kayit": 3201450,
+    "surum_0_yeni_gun_kayit": 0,
+    "surum_1_yeni_gun_kayit": 213440
+  },
+  "kontroller": {
+    "surumler_0_ve_1": true,
+    "surum_0_kaynakla_ayni": true,
+    "surum_1_sayimi": true,
+    "surum_0_yeni_gun_yok": true,
+    "surum_1_yeni_gun_var": true
+  },
+  "basarili": true
+}
