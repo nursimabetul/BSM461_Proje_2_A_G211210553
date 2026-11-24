@@ -1,0 +1,21 @@
+# Ana docker-compose.yml dosyasina ek olarak kullanilir; onun yerine gecmez.
+# docker compose -f docker-compose.yml -f compose.iot-pano.yml --profile servis --profile iot-pano up -d iot-pano
+services:
+  iot-pano:
+    image: bsm461-araclar:2
+    profiles: ["iot-pano"]
+    init: true
+    working_dir: /kit
+    command: ["python", "araclar/iot_pano.py"]
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      MONGO_URI: "mongodb://mongo:27017"
+    volumes:
+      - .:/kit:ro
+    ports:
+      - "127.0.0.1:8050:8050"
+    depends_on:
+      mongo:
+        condition: service_started
+    restart: unless-stopped
