@@ -1,0 +1,18 @@
+{
+  "kosu": "20261124T181936Z_3ca91060",
+  "bicim": "delta",
+  "hedef": "s3a://tablolar/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/delta",
+  "beklenen_kayit": 2988010,
+  "yazici_durumu": "hata_ile_durdu",
+  "yazma_sirasinda_yeni_dosya_gozlendi": true,
+  "kesinti_penceresi_dogrulandi": true,
+  "kontrol_zamani": "2026-11-24T18:26:23.102567+00:00",
+  "not": "Mantiksal tablo butunlugu kontrolu. Parquet dosyalarinin fiziksel olarak bozuk oldugunu varsaymaz. Tek yazici, yerel SeaweedFS deneyi; tum ariza turlerini kanitlamaz.",
+  "okunabilir": true,
+  "okunan_kayit": 2988010,
+  "eski_icerik_korundu": true,
+  "yeni_icerik_tam": false,
+  "surumler": [
+    0
+  ]
+}

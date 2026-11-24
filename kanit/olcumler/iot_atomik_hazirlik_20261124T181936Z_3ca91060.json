@@ -1,0 +1,15 @@
+{
+  "deney": "iot_atomik_yazma",
+  "asama": "hazirlik",
+  "kosu": "20261124T181936Z_3ca91060",
+  "kaynak": "s3a://tablolar/iot",
+  "kaynak_surumu": 0,
+  "delta_yolu": "s3a://tablolar/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/delta",
+  "parquet_yolu": "s3a://islenmis/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/parquet",
+  "kaynak_kayit": 2988010,
+  "delta_baslangic_kayit": 2988010,
+  "parquet_baslangic_kayit": 2988010,
+  "delta_baslangic_surumu": 0,
+  "kopyalar_kaynakla_ayni": true,
+  "not": "Henuz kesinti uygulanmadi. Kaynak tablo degistirilmedi. Iki ayri deney kopyasi."
+}

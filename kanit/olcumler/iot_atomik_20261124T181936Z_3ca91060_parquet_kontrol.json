@@ -1,0 +1,16 @@
+{
+  "kosu": "20261124T181936Z_3ca91060",
+  "bicim": "parquet",
+  "hedef": "s3a://islenmis/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/parquet",
+  "beklenen_kayit": 2988010,
+  "yazici_durumu": "hata_ile_durdu",
+  "yazma_sirasinda_yeni_dosya_gozlendi": true,
+  "kesinti_penceresi_dogrulandi": true,
+  "kontrol_zamani": "2026-11-24T18:31:17.500444+00:00",
+  "not": "Mantiksal tablo butunlugu kontrolu. Parquet dosyalarinin fiziksel olarak bozuk oldugunu varsaymaz. Tek yazici, yerel SeaweedFS deneyi; tum ariza turlerini kanitlamaz.",
+  "okunabilir": false,
+  "okunan_kayit": null,
+  "eski_icerik_korundu": false,
+  "yeni_icerik_tam": false,
+  "okuma_hatasi": "[UNABLE_TO_INFER_SCHEMA] Unable to infer schema for Parquet. It must be specified manually."
+}

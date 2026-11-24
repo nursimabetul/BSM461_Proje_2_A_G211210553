@@ -1,0 +1,18 @@
+{
+  "kosu": "20261124T181936Z_3ca91060",
+  "bicim": "delta",
+  "hedef": "s3a://tablolar/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/delta",
+  "hazirlik_dosyasi": "/kit/kanit/olcumler/iot_atomik_hazirlik_20261124T181936Z_3ca91060.json",
+  "baslangic": "2026-11-24T18:24:42.706523+00:00",
+  "python_pid": 4853,
+  "java_pid": 4787,
+  "durum": "hata_ile_durdu",
+  "yeni_dosya_gozlendi": true,
+  "not": "Overwrite; sicaklik +1000 sentetik degisim. 8 gorev, ilk gorev hizli, digerlerinde 1000 satirda 0.25 sn bekleme. Performans testi degil.",
+  "gozlem_zamani": "2026-11-24T18:24:54.093148+00:00",
+  "yeni_dosya_ornekleri": [
+    "s3a://tablolar/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/delta/part-00000-b97a81ea-00e0-474b-a1fc-98c1ff40c9bf-c000.snappy.parquet"
+  ],
+  "bitis": "2026-11-24T18:25:16.332143+00:00",
+  "hata": "An error occurred while calling o87.save"
+}

@@ -1,0 +1,18 @@
+{
+  "kosu": "20261124T181936Z_3ca91060",
+  "bicim": "parquet",
+  "hedef": "s3a://islenmis/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/parquet",
+  "hazirlik_dosyasi": "/kit/kanit/olcumler/iot_atomik_hazirlik_20261124T181936Z_3ca91060.json",
+  "baslangic": "2026-11-24T18:30:22.438419+00:00",
+  "python_pid": 5898,
+  "java_pid": 5832,
+  "durum": "hata_ile_durdu",
+  "yeni_dosya_gozlendi": true,
+  "not": "Overwrite; sicaklik +1000 sentetik degisim. 8 gorev, ilk gorev hizli, digerlerinde 1000 satirda 0.25 sn bekleme. Performans testi degil.",
+  "gozlem_zamani": "2026-11-24T18:30:31.964138+00:00",
+  "yeni_dosya_ornekleri": [
+    "s3a://islenmis/iot_z7_deney/atomiklik/20261124T181936Z_3ca91060/parquet/_temporary/0/_temporary/attempt_202611241830221632296843706664535_0011_m_000000_111/part-00000-206da0c7-9d8d-4fa7-9411-04abf97f8d96-c000.snappy.parquet"
+  ],
+  "bitis": "2026-11-24T18:30:35.057625+00:00",
+  "hata": "An error occurred while calling o86.parquet"
+}
