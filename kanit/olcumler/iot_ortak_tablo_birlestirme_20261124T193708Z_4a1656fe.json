@@ -1,0 +1,49 @@
+{
+  "islem": "ortak_olcum_tablosuna_ekleme",
+  "kosu": "20261124T193708Z_4a1656fe",
+  "onceki_satir": 566,
+  "eklenen_satir": 195,
+  "son_satir": 761,
+  "eski_satirlar_aynen_korundu": true,
+  "onceki_sha256": "106b18d421773eb576296e4e09c7cccf3f67afe09e8561b2be2bd09736c8f048",
+  "son_sha256": "bbefd0b12dba907ddeb8a17f1eb824de85084bc4157e7cef445b53920a698bbc",
+  "kaynaklar": [
+    {
+      "dosya": "olcumler/iot_delta_zaman_yolculugu_20261124T175718Z_36011672.csv",
+      "sha256": "9c05776ba359931e5fee61542a37aecfcd7d6c164fb80dd2203dc9820648dfc3",
+      "kaynak_satir": 6,
+      "eklenen": 6,
+      "zaten_var": 0
+    },
+    {
+      "dosya": "olcumler/iot_atomik_20261124T181936Z_3ca91060_delta_kontrol.csv",
+      "sha256": "d5bb7e918cbda516075eebd710f44413bc10026f6fe3ef686d5a89fb8090cabf",
+      "kaynak_satir": 6,
+      "eklenen": 6,
+      "zaten_var": 0
+    },
+    {
+      "dosya": "olcumler/iot_atomik_20261124T181936Z_3ca91060_parquet_kontrol.csv",
+      "sha256": "5c294a60a6924b3328ce2c28fc6ef06a5d19087587ff15b271d9d458fc1a13b9",
+      "kaynak_satir": 5,
+      "eklenen": 5,
+      "zaten_var": 0
+    },
+    {
+      "dosya": "olcumler/iot_mongo_aktarim_20261124T185013Z_a62ee8dc.csv",
+      "sha256": "ea6bea72a86380117c3fa395a2b922d7ecb9166e8f1b90c01b1004c12adbde7e",
+      "kaynak_satir": 10,
+      "eklenen": 10,
+      "zaten_var": 0
+    },
+    {
+      "dosya": "olcumler/iot_mongo_sorgu_20261124T185641Z_25024778.csv",
+      "sha256": "9f6d7ce3d8a35910b7016e55593dca76c30b918d453b4c003d72273ae4d155be",
+      "kaynak_satir": 168,
+      "eklenen": 168,
+      "zaten_var": 0
+    }
+  ],
+  "betik_sha256": "8d395a206312348ae22706d4fb2b14e44131ad612fb4c4798b011428eb77c861",
+  "not": "Olcum yapilmadi; mevcut bes deneyin ozetleri birlestirildi. Eski satirlar degistirilmedi. Yeni kaynak yollari kanit/ klasorune gore normalize edildi."
+}
